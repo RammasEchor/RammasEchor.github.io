@@ -130,10 +130,6 @@ the topics were directly related to learning, and creating new things, and takin
 step back and finding a new perspective, and they were really effective in teaching me
 some things I didn't know, and some things I already knew but I had the wrong approach to them.
 
----
+### Back to main page
 
-## All weeks
-
-| Week | Date |
-| --- | --- |
-| [Week 1 - Innovation and hard\smart work](/Week_Pages/Week1_April.md) | 05 Apr 2021 - 09 Apr 2021 |
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
