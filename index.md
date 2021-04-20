@@ -14,7 +14,7 @@ the program logic into three interconnected elements.
 
 - Model: App central structure
 - View: Representation of information
--Controller: Accepts the inputs
+- Controller: Accepts the inputs
 
 ## Node
 
@@ -253,7 +253,7 @@ Collaboration need trust and respect between the ones collaborating,
         something
       done
 
--Filename expansion: `?`, `*`
+- Filename expansion: `?`, `*`
 
 ## Conclusions
 
