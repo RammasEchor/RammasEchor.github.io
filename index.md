@@ -1,134 +1,266 @@
-# Week 1 - Innovation & hard/smart work
+# Week 2 - Polyglot Programming
 
-## 05 Apr 2021 - 09 Apr 2021
+## 13 Apr 2021 - 19 Apr 2021
 
 ---
 
-This week I learned a lot about Encora, mostly about different departments. What's more,
-I learned from various readings and videos about different topics and techniques, and
-here I will try to condense my takeaway from everything I learned this week.
+This week I learned a lot, my mentors gave some readings, and the videos
+and the readings had a lot of topic to absorb.
 
-### How to create the correct environment and the steps to success in a human conversation (or how to talk to anyone)
+## MVC
 
-At the beginning of this reading I was expecting some kind of motivational message such as
-"You can do it!", but I was surprised to find specific techniques and how to implement them
-into a conversation to appear more charismatic. My main takeaway is that you need to listen to your audience, learn what keeps them engaged and drive the conversation to that.
+Model View Controller is a software design pattern, commonly used for developing user interfaces that divides
+the program logic into three interconnected elements.
 
-### Profound life lessons from a University Professor
+- Model: App central structure
+- View: Representation of information
+-Controller: Accepts the inputs
 
-- Focus on making simple projects that just work.
+## Node
 
-> "Early optimization is the root of all evil". - Donald Knuth  
+Javascript runtime. What I understand is like an API for the OS, so if any PC has Node.js installed,
+it can run any program that uses those calls to the system.
 
-This quote doesn't appear in the reading, but it was something that I read some time
-ago, and I think it fits the topic.  
+## Software design patterns
 
-- Intuition works great if you need a place to start analyzing, not so great if you
-want to solve a problem only with that; "Use your intuition to ask questions, not to answer them".  
-- It's best to create something new that to adapt something to your needs, but this is
-not always possible, mainly because it is more work to do so.  
-- Construct general rules over
-facts, and examples always makes life easier.  
-- A problem is not fixed until you had researched
-and reached the cause. Don't try to give the impression that you know everything, it is okay
-to say "I don't know".
-- Coherent systems tend to be unstable; because you only expect your
-system to behave one way, when something happens everything tends to crash. But coherent systems
-are more efficient.
+- Creational Design Patterns: Handling object creational mechanisms
+  - Constructor pattern: It is the way new objects are created
+  - Factory: Create objects that are similar but not equal
+  - Prototype: We take the structure of an object and use it to create new objects
+  - Singleton: Only one instance of a class can exist.
 
-### An idea is worth nothing if is not executed
+- Structural design patterns: Add new functionalities to existing ones
+  - Adapter: Interface of one class is translated into another
+  - Composite: Used to create tree-like structures
+  - Decorator: Adds functionality to a class dynamically
+  - Facade: Unified and simpler interface that hides complexity of subsystems
+  - Flyweight: Used for efficiency and memory conservation (example: you just instantiate one type of object. If asked for another, you return the existing one)
+  - Proxy: Placeholder for access to an object, usually used when the object should not have a responsibility, but we want to add anyways. The proxy calls this
+  - functionality if we need it. If not, just calls the object.
 
-You could have the best idea about an start-up, or the next big social media, but
-you need to pour your sweat into them for that idea to reach it's full potential.
-Even if it fails, an idea multiplied per one is better than an idea multiplied per zero.
+## The myth of the genius programmer
 
-### The shell
+The myth here refers to that one guy that is capable of creating a super world-shocking application by himself
+and without failing a lot first. This behavior of hiding our errors stems from insecurity; it is hard to admit
+mistakes. This is unproductive and doesn't help you learn; you want to cast your code outside and receive feedback.
 
-An interface doesn't let you press a button that is not there, and you can not give the
-computer a voice command that is not programmed. To take full advantage of all computer's
-tools, we have to use the text-based interface called the shell. The most common used shell
-is the bourne-again shell (bash).
-This lecture gives an overview of the most used bash commands, like `cd`, `ls`, `echo`, etc., with
-a little side of redirection and pipes.
+How to avoid this:
 
-### Why autopilot is the worst thing ever (and the best)
+- Lose the ego: Criticism is not evil
+- Embrace failure: Everybody fails; you even learn more failing
+- Iterate quickly: Fail more and learn more
+- Be a small fish: Try to work with someone who knows more than you, so you can learn more.
+- Be influenced: Try to listen to others peoples ideas.
+- Practice is Key: Failures tend to be smaller over time, and success larger  
+- Sometimes you can use technology to solve sociological problems.
+  - Requiring a sign in before commenting on code may put you in contact with someone
 
-I learned a lot from this reading, and it was my favorite reading from the week.
-Autopilot is something that our brain uses to avoid being overwhelmed with all the
-decisions needed for each day, or even hour. But autopilot is creeping into our lives,
-and it is not good. It makes us ignore other aspects of our lives that are as important, and often more. I learned about the various types of autopilot, and action points
-to help us manage that autopilot. Once we have become aware of our own autopilots, then
-we can start changing them. Taking three steps (Leading our life, deepening connections,
-and becoming part of the community) assures that we manage the autopilot.
+When working on collaborative projects, people tend to join too late or too early;
+if the project is 95% finished, well, there is nothing for them to do. If
+the project is al 5%, and a lot of people take interest, almost always the
+project stalls because the can't agree on what to do:
 
-### How to apply the x-workflow to any problem
+- Try to have a little code and objectives for your project before
+telling people about it.
+- Document failures; Don't make the same mistake twice.
 
-In this reading I learned about the methodology known as *x-workflow*.
-My main takeaway is that we solve problems in a way that resembles throwing balls of mud to a wall and seeing which one stuck better; this process generates more problems and errors, and even if it works, you don't learn. This is where the x-workflow enters;
-It is a series
-of steps used to identify a problems cause, and how to research solutions; this last steps
-involves the implementation and posterior analysis of the solution; more importantly,
-you learned everything about the problem in the process.
+## Perf matters: Some techniques
 
-### Religion, evolution, and the ecstasy of self-transcendence
+With the tools
+that we have today to measure performance, there is no excuse for your website
+to be slow in mobile devices.
 
-The main reason people considerate themselves to be spiritual in one way or another.
-Sometimes, something happens that triggers a state of heightened consciousness. The capacity
-of self-transcendence is a part of being human. Group selection may be a valid evolutionary path,
-where the cooperative group triumphs over a group that is not coherent. But the cooperative group
-must solve the free-riders problem (subjects in a group that don't cooperate but free-rides the success
-of the group) in order to reap the benefits of cooperation. Nature solved this problem in a brutal way; if you don't
-cooperate, your group and you die. But if group selection is true, that means that we evolved to be cooperative, to be
-part of something greater. Self-transcendence is to be in the state of heightened consciousness that
-allows us to infer this.
+This is the performance tuning loop:
 
-### Creative Thinking Hacks
+- Gather data form users
+- Insight: What does this data mean?
+- Action: What you can do to increase performance?
 
-Creating something is an active process. Removing unnecessary constraints based on assumptions makes your solutions
-more creative. The correct environment, such as taking a walk, can greatly help in the problem solving process.
-Persistence means working hard AND working smart.
+There is three (3) pillars of web performance:
 
-- Write down ideas
-- Escape: Let your subconscious mind speak, usually happens when in quiet places.
-- Invert: Try to solve the opposite problem, like, how could I make this problem worse.
-- Partner with a person
-- Fail: If you're not failing, that means that you're not taking enough risks to be creative
-- Switch: Find a new way to represent the problem
+- Network:
+  - Critical path: Resolution of all the dependencies needed to get pixels on
+  screen.
+- Rendering: Reduce number of paints.
+- Compute: Reduce execution time.
+  - Request Animations Frames (rAF): You can push back operations if you
+  do a lot of things in a frame, and mis subsequently frames.
 
-### How progress really happens
+## Variable Length Codes: Compressor Head
 
-When we think about change, we think about what tool or technology is going to make that happen.
-This is the wrong way of thinking; there is not change until someone stakes their reputation in
-doing something different. But change is difficult because it requires work, thinking, raises questions,
-and it puts us at risk of embarrassment. And then, after we commit to a change, we need three things:
+### Part 1: Why and how it works?
 
-- Power: What can I change?
-- Persuasion: What support?
-- Intuition: What can I anticipate?
+Data compression is used to avoid flooding the network; the information
+that flows through the internet every day, every second, could easily
+stall the entire internet if not compressed.
+Variable length codes changes ASCII and assigns a number of bits according
+to the occurring percentage of a character in a stream. If a character appears
+a lot of times, the code assigned is very short, like a single zero.
+If the probability of a character appearing on a stream is higher than
+the other characters, we need less bits per character to represent that stream in average, so the number of bits in the stream lowers if we use
+variable length code. You need to make sure to assign shortest codes to
+the most frequent symbols.
 
-### How to Master Anything
+The encoding part is easy; just put the bit corresponding to each character
+in the stream. The decoding part is more difficult; you need to read ahead
+because you don't know the current character and thereof the length of bits
+to read. What if `A` is `1` but `B` is `10`? Your code needs to assign new
+bit codes that *doesn't* start with previous codes.
 
-Without practice and the need to improve, people with experience could be on the same level
-or even worse compared with someone with less experience but that keeps learning. Mastery
-comes from practice, and more specifically, the ability of representing experiences in mind
-that relates to the actual situation. This ability comes from practice.
+The Huffman tree generates VLC for a set of chars by means of a binary tree.
 
-### Making badass developers
+### Part 2: The LZ Reign
 
-We are not computers; our cognitive resources are limited. We work, and then we are tired, and need
-food and rest. We need to manage this cognitive resources, and the best way is to automate certain
-tasks. The problem lies in the difficulty of setting those tasks in autopilot, because we first need
-to learn and waste cognitive resources in them. Some way to learn the desired tasks and set them to autopilot
-without wasting too much resources is to watch high-quality examples in high-quantity and let our subconscious
-brain do the heavy lifting; finding patterns and the overall technique.
+We use symbol grouping to group (duh) adjacent symbols into a even more compressed stream. We can even group entire strings together. Entropy in this
+context means how many bits in average we need to represent the message when
+compressed, and so if we group entire strings, the entropy increases (which is not ideal). We want to find the balance between the longest chain and the
+minimum entropy. The *LZ* family is the most used algorithm for this task,
+and therefore for compression. This algorithm spans a lot of variants, and
+it is really the backbone of the modern compression world.
+
+### Part 3: The Markov Model
+
+Instead of assigning bits to characters, we assign symbols to the
+transitions between chars (states). This leads into how we need a table
+to encode properly, but sending the table over the internet so the
+receiver can decode is a lot of overhead. Remember, the thing here is
+how to send the smallest stream over the internet. We compress the stream
+in such a way that the act of decoding the stream gives us the table for
+the remaining of the stream. This needs to strike a balance between the size
+of the table and the memory available in the system that is decompressing.
+
+## The Art of Organizational Manipulation
+
+Companies are made from people. You need to learn how to navigate them.
+
+### The Ideal Company
+
+The job of a manager is to remove roadblocks so your team can do work.
+You can question things, and you're treated the way you ask to be treated.
+You can take risks, and it is even encouraged to.
+
+### The Reality
+
+A bad manager prevents you from taking any risks, failure is terrible, and
+ignores low performers. Unrealistic expectations are always there, and they
+don't trust you.
+
+### How to navigate
+
+Do the thing that you think needs to be done, and ask for forgiveness later.
+Don't try to do it your way al the time; choose your battles. Say "Let's try
+this". Try to use favors to your advantage. Build a community with your coworkers.
+
+Ask for something in the form of three (3) bullet points and a call for action.
+
+## Programming Well with Others: Social Skills for Geeks
+
+We study about the latest technologies but not how to talk to people. Don't
+hide code; without feedback you'll never learn. The culture of your team is
+very important for a good working environment.
+
+Hear the users; make them want to tell you everything. Try not to overwhelm
+them with information.
+
+## Developer expertise: How beginners slip with their own feet
+
+We always had tool to write software, but the bug's keep appearing and
+appearing. This is not the tools fault; we the people keep creating those bugs. A good team leader asks their team how the training is coming along, and
+if it's working. Expertise means that you have enough knowledge and experience to intuitively
+know something; this is the objective of learning.
+
+There are five (5) skill stages:
+
+- Novice: Beginner in the field.
+- Advanced beginner: Start trying new things
+- Competent: Troubleshoot problems
+- Proficient: Know how it is all connected
+- Expert: Has intuition and knows how to use it
+
+## The Best Programming language
+
+The best programming language is the one that adapts best to your situation.
+You may choose a programming language based on:
+
+- Productivity
+- Performance
+- Reliability
+- Portability
+- Community
+- Familiarity
+
+## Perfection is an unrealistic goal
+
+Good enough is almost always better than perfect. After all, we are all human,
+and everyone is different; we learn, progress, fail, work in different ways, and we need to take care of us. Multitasking is not very good if we are doing
+critical tasks.
+
+## The power of agile mindset
+
+Pushes us to better ourselves, because agile mindsets grow, learn, challenge
+themselves and learn from failure.
+
+## Collaboration, Bonobos and the Brain
+
+Our brain is always making subconscious decisions (like breathing. **HA**,
+*now you're breathing manually*). As former primates, we are wired to work
+with a reduced (10) group of people. Communication is important in a team,
+
+## Everything is a remix
+
+No idea is new; we learn by copying others do something. By combining ideas,
+new creative things can occurs.
+
+## Who do you trust
+
+Collaboration need trust and respect between the ones collaborating,
+
+## Shell tools and scripting
+
+### Assign variables
+
+- `foo=bar`
+
+### Strings
+
+- `` : Literal strings
+- "" : Strings that can format values inside
+
+### Reserved var inside bash scripts
+
+- `$0` : Name of the script
+- `$1` - `$9` : Args
+- `$@` : All args
+- `$?` : Last return
+- `$$` : PID of script
+- `!!` : Last command
+- `;`: Separate commands
+
+### Various utilities
+
+- Boolean logic: `&&`,`||`,`true`,`false`
+- Output into a variable: `foo=$(command)`
+- Pipe into: `< command`
+- Conditionals:
+
+      if condition ; do
+        something
+      if
+
+- Loops:
+
+      for somthing in things; do
+        something
+      done
+
+-Filename expansion: `?`, `*`
 
 ## Conclusions
 
-This week I learned that I have some ideas that are plainly wrong. The readings and the
-videos made me identify preconceived ideas I had about how things should be that are/were wrong, but that there is always room for improvement. The topics were varied, but I learned a little bit of everything, and I really enjoyed *learning* everything I *learned*. Much of
-the topics were directly related to learning, and creating new things, and taking a
-step back and finding a new perspective, and they were really effective in teaching me
-some things I didn't know, and some things I already knew but I had the wrong approach to them.
+I learned about the importance of people in the software engineering field,
+that we are not alone, and by creating something and receiving feedback about that we can learn more than to try to present something already perfect. I learned about the ways we can thrive in a professional habit,and I learned that I can learn a new programming language quickly.
+
+I learned a little about the tools my mentor are using for their job.
 
 ---
 
@@ -136,4 +268,5 @@ some things I didn't know, and some things I already knew but I had the wrong ap
 
 | Week | Date |
 | --- | --- |
-| [Week 1 - Innovation and hard\smart work](/Week_Pages/Week1_April.md) | 05 Apr 2021 - 09 Apr 2021 |
+| [Week 1 - Innovation and hard\smart work](/Week_Pages/Week1_April.md) | 05 Apr 2021 - 12 Apr 2021 |
+| [Week 2 - Polyglot Programming](/Week_Pages/Week2_April.md) | 13 Apr 2021 - 19 Apr 2021 |
