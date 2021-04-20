@@ -1,6 +1,6 @@
 # Week 1 - Innovation & hard/smart work
 
-## 05 Apr 2021 - 09 Apr 2021
+## 05 Apr 2021 - 12 Apr 2021
 
 ---
 
