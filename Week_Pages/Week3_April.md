@@ -4,13 +4,13 @@
 
 ---
 
-This week I learned how to work in a test-driven environment with Maven and Java.
+This week I learned how to work in a test-driven environment with Maven and Java. I also learned how to create a little user-based recommender, and how to apply this knowledge to an assignment for a Movie Recommender.
 
 ## A user-based recommender
 
 I learned how to use Mahout in Java for a recommender
 that takes users and their opinion in a product, and
-then, when asked for recommendations for a user, searches for users with similar tastes and recommends products that the other users had enjoyed. This little tutorial will help me later.
+then, when asked for recommendations for a user, searches for users with similar tastes and recommends products that the other users had enjoyed. This little tutorial will help me to solve the assignment of the Movie Recommender.
 
 ## Test driven development
 
@@ -302,7 +302,23 @@ A wave may show that an electron may probably be in one place. But what if it sh
 
 I thought that I was maybe keeping up, but I really don't understand this part. I know they're talking about four models, but I don't know how each model attempts to answer the question of why an electron behaves like a wave.
 
+## The Quantum Conspiracy
 
+This is about the differences between what you read about quantum mechanics and what the actual truth is.
+
+How do we know that what we measure corresponds to actual reality?:
+
+- Make experiments more than once, and get consistent results
+
+This occurs because reality it is accurately reflected. Or is it? Turns out we can demonstrate that not really.
+
+If we measure one slit of the two slit experiments, we may think that we cheated the problem. After all, is we doesn't measure anything, that means the electron passed through the other slit. But there is something, something that is at both places at once, that when we measure *anything* the electrons stop behaving like a wave. If two particles are entangled, when an aspect of a particle is measured, the other particle changes in response, even when separated by large distances.
+
+I may need to revisit this two last videos; they are over an hour long and I didn't understand very much anything in them.
+
+## Conclusions
+
+I learned a lot, mainly about Moonshot thinking because it was the underlying theme for various videos; I learned that it is good to take risks, to try to make the world a better place, and that that way of thinking attracts valuable people. I learned about Vim and Git that I didn't know, and I also learned a lot about unit testing. Using Maven with Java showed me how easy is to manage dependencies, and the readings from Martin Fowler gave very useful information about test driven development concepts. I wouldn't say that I learned about quantum mechanics and so; I would say that I learned what I don't know.
 
 ### Back to main page
 
