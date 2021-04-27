@@ -302,16 +302,8 @@ A wave may show that an electron may probably be in one place. But what if it sh
 
 I thought that I was maybe keeping up, but I really don't understand this part. I know they're talking about four models, but I don't know how each model attempts to answer the question of why an electron behaves like a wave.
 
-## The Quantum Conspiracy
 
-PlaceHolder
 
----
+### Back to main page
 
-## All weeks
-
-| Week | Date |
-| --- | --- |
-| [Week 1 - Innovation and hard\smart work](/Week_Pages/Week1_April.md) | 05 Apr 2021 - 12 Apr 2021 |
-| [Week 2 - Polyglot Programming](/Week_Pages/Week2_April.md) | 13 Apr 2021 - 19 Apr 2021 |
-| [Week 3 - Fancy Topics](/Week_Pages/Week3_April.md) | 20 Apr 2021 - 26 Apr 2021 |
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
