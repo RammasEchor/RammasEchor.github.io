@@ -4,13 +4,13 @@
 
 ---
 
-This week I learned how to work in a test-driven environment with Maven and Java.
+This week I learned how to work in a test-driven environment with Maven and Java. I also learned how to create a little user-based recommender, and how to apply this knowledge to an assignment for a Movie Recommender.
 
 ## A user-based recommender
 
 I learned how to use Mahout in Java for a recommender
 that takes users and their opinion in a product, and
-then, when asked for recommendations for a user, searches for users with similar tastes and recommends products that the other users had enjoyed. This little tutorial will help me later.
+then, when asked for recommendations for a user, searches for users with similar tastes and recommends products that the other users had enjoyed. This little tutorial will help me to solve the assignment of the Movie Recommender.
 
 ## Test driven development
 
