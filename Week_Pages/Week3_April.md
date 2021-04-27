@@ -111,7 +111,7 @@ Throw a jar file which contains the library in the lib folder, or download the l
 
 Doing this manually was cumbersome and prone to errors.
 
-## Give me the good stuff
+### Give me the good stuff
 
 Dependencies use a similar syntax between tools. They all have the following elements:
 
