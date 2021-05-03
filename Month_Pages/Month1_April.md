@@ -169,7 +169,23 @@ When more cognitive effort is required for retrieval, greater retention results.
 
 ### Mix Up your Practice
 
+There is the myth of massed practice: learning is better when we practice that, and only that, until it hurts. The key is to space practice. The brain need a process of consolidation to strengthen connections, and this process may take days.
 
+Interleaving practice of two or more subjects is a more potent alternative to massing. Interleaving also helps with discrimination of useful information. There is also varied practice, that lets you transfer what you learned on one situation to another situation.
+
+### Embrace difficulties
+
+First, lets see how learning occurs:
+
+- Encoding: Converting sensory inputs into meaningful representation.
+- Consolidation: Strengthening this representations.
+- Retrieval: Recall that knowledge when we need it.
+
+Cues are important for learning; they make this representations pop up in your mind, and thus you're retrieving them.
+
+The more effort you put in learning something, you learn it better. This ties with a subject being difficult to learn. You need to retrieve more, to make more connections, so that knowledge gets wedged more and more into the brain. If you recall something after a while, it *reconsolidates*; updated and strengthen the brain connections.
+
+### Avoid Illusions of Knowing
 
 ## Conclusions
 
