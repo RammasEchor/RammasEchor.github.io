@@ -4,7 +4,22 @@
 
 ---
 
-## How does the heck the event loop works?
+## What the heck is the event loop anyway?
+
+I'm going to put here some concepts that I investigated to understand better this video:
+
+- Runtime: This is the execution of a program. Is everything that is loaded in memory and belongs to the program.
+- Call stack: The stack of functions that we called so far; when you get the stack trace when debugging, this is it. A log of what functions were called until this point, and, of course, it is a stack, so if a function called another function, it is "nested" in a way in the stack call; you always return to the function that is below in the stack. (Ha, this appeared later in the video and better explained than wikipedia)
+
+Javascript is a single threaded, asynchronous, concurrent, non-blocking language, with a call stack, an event loop, a callback queue. It is a single treaded runtime; it has only one call stack. This means that it can only do one thing at a time. So, if a function takes time to complete, Javascript will wait (*block*) until that function completes (*returns*). Network requests may take seconds, or they may never complete. This is a problem, because our program can keep blocking indefinitely. This also means that the user interface will also block until those requests complete. It can't run any other code.
+
+This is solved by asynchronous callbacks. Asynchronous callbacks don't run immediately, but we can't push into the stack (because it will run immediately). So, we have the V8 runtime, in which Chrome runs, and the browser also adds this web API's. This are effectively threads that we can make calls to, and those pieces of the browser are aware of this concurrency.
+
+Little side note: Node works like this, but instead of web API's calls, we call C++ API's to thread.
+
+Those threads work in the background, and when they finish what they had to do, they do a *callback*; we passed to them a function, something to do with the result after they finish, and push that function into the *task queue* or *callback queue*.
+
+The **event loop** job is to look at the stack, and to look at the callback queue. If the stack is empty, it pushes the first thing in the callback queue, and effectively runs that.
 
 ## The pretotyping manifesto
 
@@ -13,6 +28,26 @@ Most new ideas fail, even if they are very well executed. Make sure you're build
 An idea doesn't mean anything if is not executed. Innovators do this, they concrete and idea, and see where it leads them. This is better, because this products are data, and data is much more valuable than just the idea.
 
 Learn how to fail fast. This let's you learn fast, and statistically, you will end up with more successes. This is what it means to create a prototype: to create something that anything but resembles what you're trying to do, and see if you, or the people, use it.
+
+### My pretotyping
+
+I'm going to test three (3) ideas, and show you how I used the pretotyping technique. I create a page for all three experiments, and you can check out them here:
+
+[Pretotyping link]
+
+But here is a fast description of them:
+
+#### Long distance fire starter
+
+Now, bear with me; you can't burn down your ex's house. This is a way to lit up your water heater via a network. This means remote start.
+
+#### Super-leash
+
+This leash is very long; it lets your dog run around almost as if had no leash.
+
+#### Kindle mount
+
+I wanted to see how feasible would be a mount for you to read your Kindle while doing something else with your hands, like driving. Just kidding, like washing the dishes.
 
 ## Programming the Universe
 
@@ -158,3 +193,9 @@ Anti-fragility is to be capable to adapt. Something that actually that gets bett
 Fit is a tool used to control the blast radius of the Simian Army, because the monkeys worked really well; so well that the engineers were wary to let the monkeys loose because of the fallout.
 
 Netflix uses injection of errors into requests from real users to Netflix. Of course, this need to strike a balance between testing and degrading the user experience, something that no one wants.
+
+## Conclusions
+
+### Back to main page
+
+[https://rammasechor.github.io/](https://rammasechor.github.io/)

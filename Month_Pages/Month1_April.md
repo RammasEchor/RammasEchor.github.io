@@ -129,3 +129,11 @@ Here are some tips to learn better:
 - Try to enter diffuse mode after a study session, to strengthen the pathways in the brain
 - Genius people tend to hold too much things onto out short term memory; this makes them more resistant to different perspectives
 - Working with more people let's you understand the topic better, but only if it really is about studying.
+
+## Conclusions
+
+
+
+### Back to main page
+
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
