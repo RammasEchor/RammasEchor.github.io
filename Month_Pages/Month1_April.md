@@ -138,6 +138,39 @@ Here are some tips to learn better:
 
 ## Make it stick
 
+People generally learn in the wrong ways; it's not that they don't learn, but they learn inefficiently. This is because the most effective learning strategies are not intuitive.
+
+Learning is acquiring knowledge and skills, and having them readily available from memory so you can make sense of future problems and opportunities.
+
+- Learning requires memory
+- Learning is essential for every step of life
+- Learning is a *learned* skill
+
+Elaboration is the process of giving new material meaning by expressing it in your own words, and connecting it with what you know. This is the key: to make connections in your brain about the things we are learning.
+
+It may be true that talent and intelligence give an advantage, but the elements that shape your intellectual abilities are under your control
+
+In this part, I learned about some fallacies that dot the scenery of learning:
+
+- Repetition: Repetition is often wrong because you don't learn fast, or well. It may be useful if you let time pass between the readings.
+- Good presentations let people learn faster, and easier: This creates the illusion of mastery; that we already know and understand the topic.
+
+### To learn, retrieve
+
+Love the stories at the beginning of each chapter.
+
+There is a kind of learning that comes from reflection on personal experience.
+
+We forget 70% of things that we hear or read: but a central challenge to learning is to stop this process of forgetting. Retrieval has the testing effect: reinforces pathways in the brain, and it is easier to recall the next time.
+
+Feedback also plays a role: giving feedback (for example, the correct answers) after testing strengthens retention, and even delaying feedback slightly produces better long-lasting effects. If there is immediate feedback, the learner learn to depend on the presence of the correction.
+
+When more cognitive effort is required for retrieval, greater retention results.
+
+### Mix Up your Practice
+
+
+
 ## Conclusions
 
 ### Back to main page
