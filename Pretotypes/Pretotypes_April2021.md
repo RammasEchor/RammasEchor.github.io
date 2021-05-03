@@ -4,6 +4,12 @@
 
 ---
 
+### Main page
+
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
+
+---
+
 ## Long distance fire starter
 
 This idea was always in my mind; with the pandemic, I tend to shower around noon. My parents shower in the morning, and sometimes they turn off the water heater (like to save gas, but half of the time they forget to). Now, instead of changing my habits like a sane person and check the water heater before a shower, I keep getting undressed before turning on the shower; I always forget that the water heater may be off, and I need to get down, and turn it on. I want to create a device that can turn on the heater by itself; this device needs to be remote activated. I also need this to turn off the water heater when I want to. I know there are water heaters with this functionality already, but this would be like retrofitting an existing, old heater.

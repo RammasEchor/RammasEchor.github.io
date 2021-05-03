@@ -4,6 +4,12 @@
 
 ---
 
+### Main page
+
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
+
+---
+
 This week I learned how to work in a test-driven environment with Maven and Java. I also learned how to create a little user-based recommender, and how to apply this knowledge to an assignment for a Movie Recommender.
 
 ## A user-based recommender

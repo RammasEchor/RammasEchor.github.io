@@ -4,6 +4,12 @@
 
 ---
 
+### Main page
+
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
+
+---
+
 This month was a lot to take in.
 
 ## How computers work
@@ -131,8 +137,6 @@ Here are some tips to learn better:
 - Working with more people let's you understand the topic better, but only if it really is about studying.
 
 ## Make it stick
-
-
 
 ## Conclusions
 

@@ -4,6 +4,12 @@
 
 ---
 
+### Main page
+
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
+
+---
+
 This week I learned a lot about Encora, mostly about different departments. What's more,
 I learned from various readings and videos about different topics and techniques, and
 here I will try to condense my takeaway from everything I learned this week.

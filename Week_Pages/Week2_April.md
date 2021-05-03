@@ -4,6 +4,12 @@
 
 ---
 
+### Main page
+
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
+
+---
+
 This week I learned a lot, my mentors gave some readings, and the videos
 and the readings had a lot of topic to absorb.
 

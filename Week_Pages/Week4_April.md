@@ -4,6 +4,12 @@
 
 ---
 
+### Main page
+
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
+
+---
+
 ## What the heck is the event loop anyway?
 
 I'm going to put here some concepts that I investigated to understand better this video:
@@ -33,7 +39,7 @@ Learn how to fail fast. This let's you learn fast, and statistically, you will e
 
 I'm going to test three (3) ideas, and show you how I used the pretotyping technique. I create a page for all three experiments, and you can check out them here:
 
-[Pretotyping link]
+[My pretotypes](/Pretotypes/Pretotypes_April2021.html)
 
 But here is a fast description of them:
 
