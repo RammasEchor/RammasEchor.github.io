@@ -62,12 +62,26 @@ I wouldn't use this, and I think this would flop for the reasons stated above.
 
 ## Kindle mount
 
-I want to create a mount that can change pages of a Kindle without the use of hands; like voice, or even movement activated. This would let me read while I do things with my hands that doesn't require my full attention.
+I want to create a mount that can change pages of a Kindle without the use of hands; like voice, or even movement activated. This would let me read while I do things with my hands that doesn't require my full attention; like washing the dishes.
 
 ### Hypothesis
 
+If this mount really let's you integrate something you like (reading) with something boring (washing the dishes, for example), it would appeal to people, but only if it works seamlessly.
+
 ### Experiment description
+
+I created a "mount"; this let's me read while I do the dishes.
+
+![Dogs](../imgs/pretotyping_april/mount.jpg)
 
 ### Validation
 
+I used this each night for four days; one of my chores is to wash the dishes after dinner.
+
 ### Results
+
+I think this may work: It let me read, and I really didn't feel like being stuck in a page, like when you're not paying attention, and your eyes just glide over the page.
+
+The disadvantage was that it took me more than twice the time to wash the dishes; so from half an hour, I took like an hour and a quarter.
+
+I think this may work with certain people, but that means that this would flop.

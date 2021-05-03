@@ -130,9 +130,11 @@ Here are some tips to learn better:
 - Genius people tend to hold too much things onto out short term memory; this makes them more resistant to different perspectives
 - Working with more people let's you understand the topic better, but only if it really is about studying.
 
+## Make it stick
+
+
+
 ## Conclusions
-
-
 
 ### Back to main page
 
