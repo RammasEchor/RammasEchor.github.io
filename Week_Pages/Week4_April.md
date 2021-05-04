@@ -85,7 +85,7 @@ If we can compute any answer, that means that we can just compute a set of rules
 
 ## Feynman and computation
 
-Little histories about how Richard Feynman helped the computing field.
+Little stories about how Richard Feynman helped the computing field.
 
 ### Parallelism
 
@@ -201,6 +201,8 @@ Fit is a tool used to control the blast radius of the Simian Army, because the m
 Netflix uses injection of errors into requests from real users to Netflix. Of course, this need to strike a balance between testing and degrading the user experience, something that no one wants.
 
 ## Conclusions
+
+I learned about various techniques big companies use for testing, like the Simian Army, and Fit. I learned that frequent testing leads to a good product, and a product with little down time. I learned that sometimes the usual testing techniques are not enough, or very, very expensive, and that there are a lot of creative solutions. I learned about the scientific method, and why is it important to have a base to start from. This connects with the idea from the first week; "An idea is worth nothing; it is all in the execution". In the scientific method, you concrete that idea into a formulation, and test it. I learned about the event loop and Javascript, how is it that it work asynchronously. I learned about Richard Feynman, and his extraordinary life.
 
 ### Back to main page
 

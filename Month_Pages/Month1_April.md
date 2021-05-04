@@ -10,8 +10,6 @@
 
 ---
 
-This month was a lot to take in.
-
 ## How computers work
 
 In this book I learned a lot how we may build a computer from the ground up. We started with how we may use a communications system to talk to our friend, and then how we may create some kind of code to transmit this messages more quickly. This let us learn about electricity, how we may construct circuits and how the work. Something it really stick with me was how we use the earth as a really big conductor; I studied circuits in college but I didn't really understand that part until now. From here, we creates some simple circuits with a cable and a lightbulb (well, two lightbulbs), so when our friend saw that lightbulb blink in his bedroom, and knew the code needed to understand the message, then he could tell what we were trying to tell him. From here, I learned how we may apply this idea to create the telegram. A telegram is constructed from relays, and we may put cables across the ocean to communicate over large distances. Then, I learned about numerical systems in other base than ten (10), and how the binary numerical system is used for computers because it is so simple to reproduce in reality. I learned about the bits, and how voltage levels corresponds to states, and how we may use those states to create logic gates from switches. Remember the relays? Those were switches in a sense, and so we learned how we may construct logic gates that can do logic operations with voltage levels. For example, we may create a gate that only outputs a HIGH logic level when both it's inputs are one. From here, we construct an adder from those logic gates; a circuit that adds numbers that are in binary. This, of course, leads us to construct a more complex circuit that also subtracts. Now, we have a circuit that can do operations over numbers, but now we need where to store them: that's where the flip-flop enters. Flip-flops can store a bit using *feedback*, this means that the output of the circuit takes part in the input of the same circuit. Since we have now where to store those bits, we need a better representation of them. Here we learn about hexadecimal and bytes; hexadecimal lets us represent bytes, because, for example, if we represent 16 bits in octal, and then, we represent those same 16 bits in two parts of 8 bits, the octal representation is *different*. In hexadecimal is the same. With hexadecimal, this representation doesn't change. From here,we understand how we may build an array of flip-flops, and then how to write to them using our little adder/subtractor that we built before. This delves us into how, since the beginning of time, humans always wanted a way to do automated things, and what better candidate than numeric operations? Our brains are not really wired to be computers, so this is extra pleasant. In here, I learned about microprocessors, about control lines and I/O necessary for the processor to get data from us. Here we learn about the numerical representation of characters, and the data bus and how we may isolate each circuit in the data-bus with tristate gates. Then, we learned about a simple operating system, and how that operating system let's you program a microprocessor that has a memory connected to it. I learned about how floating point numbers are represented in binary, and in the computer's memory, and how any language that is not assembly is a high level language. Then, I learned about how, from the text output or the lightbulb output we had since the beginning of the book, we can output images to a screen as to create a *Graphical User Interface*, used to interact with the computer in a more user friendly way.
@@ -61,7 +59,7 @@ Sleeping allows you to learn better and faster. It consolidates memories into th
 
 ### Testimonies
 
-In this section of the course, I learned about how different people learn, how they apply the information of this course and changed the way they learn. Each one of them had a different history to tell, and I really enjoyed reading them.
+In this section of the course, I learned about how different people learn, how they apply the information of this course and changed the way they learn. Each one of them had a different stories to tell, and I really enjoyed reading them.
 
 ### Introduction to chunking
 
@@ -206,7 +204,7 @@ Adopt active learning strategies, like retrieval practice, spacing and interleav
 
 ### Increase your abilities
 
-We may think that our full potential is hardwired since birth, but this is a myth. Average IQ has risen over the past century. 
+We may think that our full potential is hardwired since birth, but this is a myth. Average IQ has risen over the past century.
 
 Our senses only sense; is the brain that process this information. Patients with loss of a sense have had their other sense take part; an experiment that sent stimulus to the tongue of a patient with no vision had their brain "rewired" to understand those signals, and that patient could catch a ball thrown to him. This reinforces the notion that our brain is very plastic, something that reorganizes itself with each new task, even for old people.
 
@@ -242,8 +240,9 @@ Students must be helped to understand ideas that we seen, like:
 
 I learned about examples of every point mentioned, like retrieval and generation, and some of them were boring, but most were pretty interesting, how they apply the concepts we saw in this book to real life.
 
-
 ## Conclusions
+
+This month I learned about how we need to put to work those ideas that we have, and that an idea is worth nothing if it is still only on our minds. This ties with the pretotyping concept; that we may fake a product, with all but functional, to see if we, or the people, would use it, because what is a pretotype but a very young idea? Almost newborn. I learned that it doesn't matter what you know now, but how fast can we learn new things; this partly connects with the idea that if we think we know everything, we don't have the desire to learn more and be better at what we do. This also ties with the concept of disciplined practices and what matters; what we can do to learn better? I learned about different learning techniques, like retrieval practice and testing the knowledge we just learned. I also learned that is better to space the testing process, and the retrieval practices; this can also be connected with interleaving. I learned about how suddenly I may get asked to learn a new language, how it is just a tool, and I can use previous knowledge of other languages to learn it quickly. I learned about the scientific method; to test everything because nothing is set on stone. That is better to test than to have assumptions, even if it is more expensive. I learned about moonshot thinking, how we may take risks for those ideas that can make things 10x better, but, of course, with a clear defined view of what we want. I learned about how software engineering is more about dealing with people; coding is easy, and we have a lot of tools at our disposal, but each one of us is different, and if we want to create something big, we may learn to work as a team, and learn how to receive feedback.
 
 ### Back to main page
 

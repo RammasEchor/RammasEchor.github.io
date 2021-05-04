@@ -55,7 +55,7 @@ Sleeping allows you to learn better and faster. It consolidates memories into th
 
 ### Testimonies
 
-In this section of the course, I learned about how different people learn, how they apply the information of this course and changed the way they learn. Each one of them had a different history to tell, and I really enjoyed reading them.
+In this section of the course, I learned about how different people learn, how they apply the information of this course and changed the way they learn. Each one of them had a different story to tell, and I really enjoyed reading them.
 
 ### Introduction to chunking
 
