@@ -187,6 +187,62 @@ The more effort you put in learning something, you learn it better. This ties wi
 
 ### Avoid Illusions of Knowing
 
+We have two analytic systems:
+
+- One is unconscious, intuitive and immediate.
+- The other is the slower process of analysis and reasoning.
+
+This control how we behave in situations.
+
+We *need* narratives to understand out view of the world. If we don't have one, we may invent one. Incompetent people overestimate their own competence, and failed to sense a mismatch between their performance and what should be, so they see no need to improve. The answer is to base our perception of ourselves with objective metrics that are outside of us, like the mistakes we make.
+
+### Get beyond learning styles
+
+What you learn in one situation can be applied to other situations as well. This is because we extract underlying information, and abstract that information into principles that can be applied elsewhere.
+
+Each one of us needs to be in charge of our own education; we have a large quantity of resources in the form of aptitudes, knowledge, interests, and sense of our own capabilities that shape how we learn.
+
+Adopt active learning strategies, like retrieval practice, spacing and interleaving.
+
+### Increase your abilities
+
+We may think that our full potential is hardwired since birth, but this is a myth. Average IQ has risen over the past century. 
+
+Our senses only sense; is the brain that process this information. Patients with loss of a sense have had their other sense take part; an experiment that sent stimulus to the tongue of a patient with no vision had their brain "rewired" to understand those signals, and that patient could catch a ball thrown to him. This reinforces the notion that our brain is very plastic, something that reorganizes itself with each new task, even for old people.
+
+Try to change the mindset of "I failed because I'm not smart enough" to "I failed because I didn't put effort/did a ineffective strategy".
+
+Expert performance is a product of the quality and quantity of practice, not of genetic predisposition, and becoming an expert is not beyond the reach of anybody that has the motivation, time, and discipline to pursue it.
+
+We find again the technique called memory palace: A imaginary place to organize the knowledge. Mnemonics are a good tool too; they reduce the quantity of information that has to be immediately  recalled.
+
+### Make it stick but with a vengeance
+
+### Learning tips for students
+
+- Take charge of your own learning.
+- Effortful learning changes your brain: Makes new connections, increases capability.
+- Retrieval practice: Quiz on everything you learn.
+- Space out retrieval practice: Leave time between study sessions.
+- Interleave topics: Alternating refreshes your mind.
+- Elaborate: Find new meaning in learned material.
+- Generate: Attempt to solve a problem before knowing the answer to the solution.
+- Use mnemonics: Help to retrieve and hold arbitrary information in memory.
+
+### Learning tips for teachers
+
+Students must be helped to understand ideas that we seen, like:
+
+- Difficulties during learning help to make the learning stronger.
+- We don't have hardwired our full potential.
+- Strive to surpass yourself.
+- Setbacks are not errors, they are feedback.
+- Create desirable difficulties in the classroom.
+- Create tools that use retrieval practice, generation, and elaboration.
+
+I learned about examples of every point mentioned, like retrieval and generation, and some of them were boring, but most were pretty interesting, how they apply the concepts we saw in this book to real life.
+
+
 ## Conclusions
 
 ### Back to main page
