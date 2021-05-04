@@ -63,7 +63,7 @@ We give meaning to information. We can see particles as particles and waves at t
 
 ## Quantum Machine Learning
 
-I think this is the most complex video from the weekly assignments. To convert machine learning algorithms to it's quantum machine learning algorithms counterparts, we may map each operation that has to do with vectors, with matrices, with linear transformations, because we know how to do those things at the quantum mechanical level. And this enables us to represent information as qbits, and each qbit is in a superposition; this means that is in all states at once. The speed up is that quantum computers can do a lot of operations at the same time; they can manipulate cˆ2ˆn using only n qbits. This is what makes this algorithms much more better in quantum computers: the speed up.
+I think this is the most complex video from the weekly assignments. To convert machine learning algorithms to it's quantum machine learning algorithms counterparts, we may map each operation that has to do with vectors, with matrices, with linear transformations, because we know how to do those things at the quantum mechanical level. And this enables us to represent information as qbits, and each qbit is in a superposition; this means that is in all states at once. The speed up is that quantum computers can do a lot of operations at the same time; they can manipulate cˆ2ˆ*n* using only *n* qbits. This is what makes this algorithms much more better in quantum computers: the speed up.
 
 ## Why each one of us should have our own black box?
 
@@ -71,11 +71,11 @@ The aviation industry learns a lot from it's mistakes. When a plane crashes, the
 
 Vice versa, the medical field is focused on talent. You don't reveal, and even hide, your mistakes because of the fear of being seen as untalented. This is a high blame culture.
 
-Learn from your mistakes; the worst thing would be to slip on the same rock that before.
+Learn from your mistakes; the worst thing would be to slip on the same rock from before.
 
 ## Richard Feynman: The Great Explainer
 
-Richard Feynman was a Nobel Prize winner for his contributions to a better understanding the Quantum Electrodynamic Theory; this theory attempts to explain how light interacts with matter at the smallest possible level. This also could explain how everything worked. He created the Feynman diagrams; a time diagram that had the equations corresponding to each moment in time for a particle collision.
+Richard Feynman was a Nobel Prize winner for his contributions to a better understanding the Quantum Electrodynamic Theory; this theory attempts to explain how light interacts with matter at the smallest possible level. This also could explain how everything worked. He created the Feynman diagrams; a time diagram that had the equations corresponding to each moment in time for a particle collision. This was the work that awarded him a Nobel Prize.
 
 ## Computing the theory of everything
 
@@ -101,7 +101,8 @@ Simulating nature on classical computers is impractical, so he devised the idea 
 
 ## Reminiscing about Richard Feynman
 
-The presenter, Danny Hillis, tells us about he got to know Richard Feynman, and about his philosophy about people: When you know, and make an impression on people, a little bit of you rubs on them. This is how one lives after death, and may not die until the last person that remembers one dies too.
+The presenter, Danny Hillis, tells us about he got to know Richard Feynman, and about his philosophy about people:
+> When you know, and make an impression on people, a little bit of you rubs on them. This is how one stays with them after death.
 
 ## Feynman on scientific method
 

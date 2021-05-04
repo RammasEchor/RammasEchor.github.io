@@ -216,7 +216,7 @@ We find again the technique called memory palace: A imaginary place to organize 
 
 ### Make it stick but with a vengeance
 
-### Learning tips for students
+#### Learning tips for students
 
 - Take charge of your own learning.
 - Effortful learning changes your brain: Makes new connections, increases capability.
@@ -227,7 +227,7 @@ We find again the technique called memory palace: A imaginary place to organize 
 - Generate: Attempt to solve a problem before knowing the answer to the solution.
 - Use mnemonics: Help to retrieve and hold arbitrary information in memory.
 
-### Learning tips for teachers
+#### Learning tips for teachers
 
 Students must be helped to understand ideas that we seen, like:
 
