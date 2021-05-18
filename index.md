@@ -4,12 +4,6 @@
 
 ---
 
-### Main page
-
-[https://rammasechor.github.io/](https://rammasechor.github.io/)
-
----
-
 ## Requirements and User Stories
 
 To try to define a full and detailed set of requirements too early in a project is not ideal. The business environment changes, new requirements and opportunities arise, and as the project progresses, the team understands better the needs of the product owner.
