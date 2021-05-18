@@ -54,6 +54,26 @@ This user stories may be written on cards: The front of the card has the user st
 - Be careful not to expand the scope of the project. Time is important.
 - COMMUNICATE: Problems, progress, everything.
 
+## Node.js and Express (specifically middleware)
+
+Express is a routing and middleware web framework; an express application is essentially a series of middleware function calls. **Middleware** functions are functions that have access to the *request object*, the *response object*, and the next middleware function. Middleware functions can perform the following tasks:
+
+- Execute any code
+- Make changes to the requests and the response objects
+- **End the request response cycle**
+- Call the next middleware function in the stack
+
+If the current middleware function does not end the request response cycle, it must call the next middleware function; otherwise the request will be left hanging.
+
+This middleware functions are mounted in a `path`. For example, if it mounted in `/public/`, it will handle the methods for that path (given that is has code for that method.)
+For example:
+
+        app.get('/public/:id', function (req, res, next) {
+          res.send('USER')
+        })
+
+Will handle `get` methods for the route `/public/:id`.
+
 ## Agile Practices
 
 ### Pair programming
@@ -186,4 +206,4 @@ Checklists made for hospitals not only did they make them check everything befor
 
 ## Anti fragility
 
-How do we recognize something robust? Well, lets start by recognizing something that is fragile: something that breaks, something that remains the same is called robust, and something anti-fragile actually gets better with time, like our body with vaccinations, or work out. Anti-fragility means becoming better through your struggles. There are two things that may break something anti-fragile: enough stress and not enough recovery time.
+How do we recognize something robust? Well, lets start by recognizing something that is fragile: something that breaks when rattled is fragile, something that remains the same is called robust, and something anti-fragile actually gets better with the rattling, like our body with vaccinations, or work out. Anti-fragility means becoming better through your struggles. There are two things that may break something anti-fragile: enough stress and not enough recovery time.
