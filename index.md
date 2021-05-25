@@ -1,6 +1,6 @@
 # Week 7 - Building something from scratch (2)
 
-## 11 May 2021 - 17 May 2021
+## 18 May 2021 - 24 May 2021
 
 ---
 
@@ -20,7 +20,7 @@ MongoDB has three basic ways to model one-to-n relationships:
 
 Basically, the information is embedded into the object. There is only one object:
 
-```` json
+````
 {
   name: 'Kate Monster',
   ssn: '123-456-7890',
@@ -38,7 +38,7 @@ Basically, the information is embedded into the object. There is only one object
 
 In this case, the 'parent' object would have an array referencing all the ID's of the many 'children'. Like replacement parts for a motor, the motor would have an array for all the ID's of all the replacement parts of that motor.
 
-```` json
+````
 {   // This is the part
     _id : ObjectID('AAAA'),
     partno : '123-aff-456',
