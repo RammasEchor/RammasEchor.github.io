@@ -1,4 +1,14 @@
-# Placeholder
+# Week 7 - Building something from scratch (2)
+
+## 11 May 2021 - 17 May 2021
+
+---
+
+### Main page
+
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
+
+---
 
 ## Considerations for designing a database in MongoDB
 
@@ -51,7 +61,7 @@ In this case, the 'parent' object would have an array referencing all the ID's o
 }
 ````
 
-#### One to Squillions (idk, this is what the mongobd doc calls it)
+#### One to Squillions (idk, this is what the mongodb doc calls it)
 
 Let's take the motor example above. In this case, each 'part' would have the 'motor' object ID.
 
