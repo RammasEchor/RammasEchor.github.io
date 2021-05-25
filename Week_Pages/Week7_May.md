@@ -65,7 +65,7 @@ In this case, the 'parent' object would have an array referencing all the ID's o
 
 Let's take the motor example above. In this case, each 'part' would have the 'motor' object ID.
 
-```` json
+````
 {   // This is the part
     partno : '123-aff-456',
     name : '#4 grommet',

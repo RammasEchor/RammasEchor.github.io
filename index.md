@@ -4,12 +4,6 @@
 
 ---
 
-### Main page
-
-[https://rammasechor.github.io/](https://rammasechor.github.io/)
-
----
-
 ## Considerations for designing a database in MongoDB
 
 ### One to N relations
@@ -65,7 +59,7 @@ In this case, the 'parent' object would have an array referencing all the ID's o
 
 Let's take the motor example above. In this case, each 'part' would have the 'motor' object ID.
 
-```` json
+````
 {   // This is the part
     partno : '123-aff-456',
     name : '#4 grommet',
@@ -108,3 +102,4 @@ Denormalizing only makes sense when you are reading much more than updating, sin
 | [Week 4 - Pretotypes](/Pretotypes/Pretotypes_April2021.md) | My pretotypes for week 4 |
 | [Month 1 - Reset Phase](/Month_Pages/Month1_April.md) | 27 Apr 2021 - 03 May 2021 |
 | [Week 6 - Building something from scratch (1)](/Week_Pages/Week6_May.md) | 11 May 2021 - 17 May 2021 |
+| [Week 7 - Building something from scratch (2)](/Week_Pages/Week7_May.md) | 18 May 2021 - 24 May 2021 |
