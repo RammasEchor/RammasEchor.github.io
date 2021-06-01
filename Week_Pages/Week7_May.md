@@ -1,6 +1,6 @@
 # Week 7 - Building something from scratch (2)
 
-## 11 May 2021 - 17 May 2021
+## 18 May 2021 - 24 May 2021
 
 ---
 

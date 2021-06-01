@@ -4,6 +4,12 @@
 
 ---
 
+### Main page
+
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
+
+---
+
 ## React and the VDOM
 
 We have the DOM (Document Object Model). This is the UI for our application. Every time there is a change in the state of the application, the DOM gets updated to represent that change. But frequently manipulating the DOM affect performance, because you need to draw everything from scratch.
@@ -27,18 +33,3 @@ Now, Formik has a component called *FastField*. This *FastField* has a property 
 Because React renders components when there is a change of state, or at least checks for changes, validating one field means changing the top level *Formik* object that all of those fields also use. This *at least* forces to compare states of the VDOM, and if we want to check every time the value is changed, the form becomes extremely slow.
 
 Using *FastField* works for us because, apart form very few fields, each field does **not** depend one from another. *FastField* updates its component only if the values it uses change, not if the *bag* holding those values (the *Formik* object) changes.
-
-
-## All blogs
-
-| Blog | Info |
-| --- | --- |
-| [Week 1 - Innovation and hard\smart work](/Week_Pages/Week1_April.md) | 05 Apr 2021 - 12 Apr 2021 |
-| [Week 2 - Polyglot Programming](/Week_Pages/Week2_April.md) | 13 Apr 2021 - 19 Apr 2021 |
-| [Week 3 - Fancy Topics](/Week_Pages/Week3_April.md) | 20 Apr 2021 - 26 Apr 2021 |
-| [Week 4 - It's all about science](/Week_Pages/Week4_April.md) | 27 Apr 2021 - 03 May 2021 |
-| [Week 4 - Pretotypes](/Pretotypes/Pretotypes_April2021.md) | My pretotypes for week 4 |
-| [Month 1 - Reset Phase](/Month_Pages/Month1_April.md) | 27 Apr 2021 - 03 May 2021 |
-| [Week 6 - Building something from scratch (1)](/Week_Pages/Week6_May.md) | 11 May 2021 - 17 May 2021 |
-| [Week 7 - Building something from scratch (2)](/Week_Pages/Week7_May.md) | 18 May 2021 - 24 May 2021 |
-| [Week 8 - Building something from scratch (3)](/Week_Pages/Week8_May.md) | 25 May 2021 - 31 May 2021 |
