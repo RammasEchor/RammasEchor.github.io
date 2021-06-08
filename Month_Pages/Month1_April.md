@@ -1,6 +1,6 @@
 # Month 1 - Reset Phase
 
-## 05 Apr 2021 - 12 Apr 2021
+## 05 Apr 2021 - 03 May 2021
 
 ---
 

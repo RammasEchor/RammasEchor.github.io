@@ -1,6 +1,12 @@
-# Week 8 - Building something from scratch (3)
+# Month 2 - Building something from scratch
 
-## 25 May 2021 - 31 May 2021
+## 11 May 2021 - 07 Jun 2021
+
+---
+
+### Main page
+
+[https://rammasechor.github.io/](https://rammasechor.github.io/)
 
 ---
 
@@ -108,19 +114,3 @@ According to customer requirements, the previous database was modified to accomm
 ### Conclusions
 
 In this project I learned a lot about some tools used in the industry for software development, such as Node.js, React, GitHub, Nodemon, Yup, MongoDB, etc. I learned a lot about the way of working in a team of software developers, such as tickets, the Agile methodology for the way of working, and more than anything, experience in how to work in a team, how to learn from others, and how reach consensus when there are disagreements. The project is in its second major iteration, and is expected to be completed and put into production in the third iteration.
-
-## All blogs
-
-| Blog | Info |
-| --- | --- |
-| [Week 1 - Innovation and hard\smart work](/Week_Pages/Week1_April.md) | 05 Apr 2021 - 12 Apr 2021 |
-| [Week 2 - Polyglot Programming](/Week_Pages/Week2_April.md) | 13 Apr 2021 - 19 Apr 2021 |
-| [Week 3 - Fancy Topics](/Week_Pages/Week3_April.md) | 20 Apr 2021 - 26 Apr 2021 |
-| [Week 4 - It's all about science](/Week_Pages/Week4_April.md) | 27 Apr 2021 - 03 May 2021 |
-| [Week 4 - Pretotypes](/Pretotypes/Pretotypes_April2021.md) | My pretotypes for week 4 |
-| [Month 1 - Reset Phase](/Month_Pages/Month1_April.md) | 05 Apr 2021 - 03 May 2021 |
-| [Week 6 - Building something from scratch (1)](/Week_Pages/Week6_May.md) | 11 May 2021 - 17 May 2021 |
-| [Week 7 - Building something from scratch (2)](/Week_Pages/Week7_May.md) | 18 May 2021 - 24 May 2021 |
-| [Week 8 - Building something from scratch (3)](/Week_Pages/Week8_May.md) | 25 May 2021 - 31 May 2021 |
-| [Week 9 - Building something from scratch (4)](/Week_Pages/Week9_Jun.md) | 01 Jun 2021 - 07 Jun 2021 |
-| [Month 2 - Building something from scratch](/Month_Pages/Month2_May.md) | 11 May 2021 - 07 Jun 2021 |
