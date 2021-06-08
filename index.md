@@ -1,6 +1,6 @@
-# Week 8 - Building something from scratch (3)
+# Month 2 - Building something from scratch
 
-## 25 May 2021 - 31 May 2021
+## 11 May 2021 - 07 Jun 2021
 
 ---
 
