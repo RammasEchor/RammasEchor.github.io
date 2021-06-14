@@ -135,10 +135,10 @@ public class KafkaConsumerProducerDemo {
         // This is a kind of lock; each call to latch.countDown() is syncronized between the consumer and the producer.
         CountDownLatch latch = new CountDownLatch(2);
 
-        // This four lines is what I will be answering below
         Producer producerThread = new Producer(KafkaProperties.TOPIC, isAsync, null, false, 10000, -1, latch);
         producerThread.start();
 
+        // This two lines is what I will be answering below
         Consumer consumerThread = new Consumer(KafkaProperties.TOPIC, "DemoConsumer", Optional.empty(), false, 10000, latch);
         consumerThread.start();
 
@@ -212,69 +212,15 @@ consumer.subscribe(Collections.singletonList(this.topic));
 ConsumerRecords<Integer, String> records = consumer.poll(Duration.ofSeconds(1));
 ```
 
-After we are sure that we use `KafkaConsumer` we can dive into its file and know how it asks for an event. In `KafkaConsumer.java` we have this:
+After we are sure that we use `KafkaConsumer` we can dive into its file and know how it asks for an event. In `KafkaConsumer.java` we have `poll()`:
 
 ```java
 private ConsumerRecords<K, V> poll(final Timer timer, final boolean includeMetadataInTimeout) {
-...
-}
-```
-
-I will try to explain each section of the code, since this answers the question directly (Each comment was added by *me* except the ones called *Docs*):
-
-```java
-// This acquires a lock protecting this consumer from access.
-acquireAndEnsureOpen();
-try {
-    // Start a measure for metrics; how many time elapses for this method
-    this.kafkaConsumerMetrics.recordPollStart(timer.currentTimeMs());
-
-    // If this consumer does not have any topic, exit
-    if (this.subscriptions.hasNoSubscriptionOrUserAssignment()) {
-        throw new IllegalStateException("Consumer is not subscribed to any topics or assigned any partitions");
-    }
-
-    do {
-        // Checks that it does not have any more polls running
-        client.maybeTriggerWakeup();
-
-        if (includeMetadataInTimeout) {
-            // *** DOCS ***
-            // try to update assignment metadata BUT do not need to block on the timer for join group
-            // *** END DOCS ***
-            // When timeout comes, you will have metadata in the timeout.
-            updateAssignmentMetadataIfNeeded(timer, false);
-        } else {
-            while (!updateAssignmentMetadataIfNeeded(time.timer(Long.MAX_VALUE), true)) {
-                log.warn("Still waiting for metadata");
-            }
-        }
-
-        // Make a request for events.
-        final Map<TopicPartition, List<ConsumerRecord<K, V>>> records = pollForFetches(timer);
-        if (!records.isEmpty()) {
-            // *** DOCS ***
-            // before returning the fetched records, we can send off the next round of fetches
-            // and avoid block waiting for their responses to enable pipelining while the user
-            // is handling the fetched records.
-            //
-            // NOTE: since the consumed position has already been updated, we must not allow
-            // wakeups or any other errors to be triggered prior to returning the fetched records.
-            // *** END DOCS ***
-            if (fetcher.sendFetches() > 0 || client.hasPendingRequests()) {
-                client.transmitSends();
-            }
-
-            return this.interceptors.onConsume(new ConsumerRecords<>(records));
-        }
-    } while (timer.notExpired());
-
-    return ConsumerRecords.empty();
-} finally {
-    release();
-    // End the timer.
-    this.kafkaConsumerMetrics.recordPollEnd(timer.currentTimeMs());
-}   
+    ...
+    final Map<TopicPartition, List<ConsumerRecord<K, V>>> records = pollForFetches(timer);
+    ...
+    return this.interceptors.onConsume(new ConsumerRecords<>(records));
+}  
 ```
 
 Now, we call another function to fetch events for us, which in turn calls an object called `Fetcher` to, you guessed it, fetch the records:
@@ -291,18 +237,22 @@ client.poll(pollTimer, () -> {
 return fetcher.fetchedRecords();
 ```
 
-This sends us to (in `Fetcher.java`):
+This sends us to `Fetcher.java`:
 
 ```java
 public synchronized int sendFetches() {
     ...
+    // Future for the fetches that may happen.
     RequestFuture<ClientResponse> future = client.send(fetchTarget, request);
     ...
+    // Callback function for the future.
     future.addListener(new RequestFutureListener<ClientResponse>() {
         public void onSuccess(ClientResponse resp) {
             ...
+            // Create a set from the events
             Set<TopicPartition> partitions = new HashSet<>(response.responseData().keySet());
             ...
+            // and process it to create partitions and events.
             for (Map.Entry<TopicPartition, FetchResponseData.PartitionData> entry :     response.responseData().entrySet()) {
                 TopicPartition partition = entry.getKey();
                 FetchRequest.PartitionData requestData = data.sessionPartitions().get(partition);
@@ -310,6 +260,7 @@ public synchronized int sendFetches() {
                 FetchResponseData.PartitionData partitionData = entry.getValue();
             }
             ...
+            // We add to a global queue all the events we recieved.
             completedFetches.add(new CompletedFetch(partition, partitionData,
                                             metricAggregator, batches, fetchOffset, responseVersion));
         }
@@ -328,7 +279,12 @@ So, to really answer the question, here are the steps:
 - `Consumer` returns the `ConsumerRecords`.
 - Now we may work with the fetched records (events).
 
+### Second question: How does npm parse the package.json file?
+
+First, lets understand npm a little bit better. *npm* is an online repository of open source *Node.js* projects; it is also a command-line utility for interacting with this repository.
+
 ## Random what I learned
 
 - `Alt`(option in macOS) `+ Z` in vs code activates line wrap
 - `Show suggestions` in vs code in macOS has the keybinding `ctrl + space`, but macOS already has this mapped to change input keyboard. Changing this keybinding to `cmd + space` makes it work.
+- `Blockman` vs code extension works as a charm; better looking than `Colorized brackets`, but you need to fine tune the colors if you have a custom theme.
