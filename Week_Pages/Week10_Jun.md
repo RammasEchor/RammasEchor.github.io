@@ -10,7 +10,7 @@
 
 ---
 
-Hi! This week in Academy we kicked off the phase *Open source / Read others people's code*. This week I answered four questions about open source projects by reading their code. I also learned about some general guidelines about contributing to open source projects. Here is what I learned this week:
+Hi! This week in Academy we kicked off the phase *Open source / Read others people's code*. This week I answered two questions of three about open source projects by reading their code. I also learned about some general guidelines about contributing to open source projects. Here is what I learned this week:
 
 ## How to contribute to open source
 
@@ -88,10 +88,23 @@ You may not receive a response, tasked to rework the contribution, get rejected,
 
 ## Open Source Questions
 
-<!-- TODO LINKS -->
+This phase we were tasked to answer three questions about open source projects. One question was chosen from a set of questions, and the other two should be made by us. These questions "should elicit deep understanding of the project", and there should be a question per primary and secondary stack. Here are the questions I will be answering this phase:
+
+### How does a consumer gets a message in Apache Kafka?
+
+[Link to blogpost with my investigation](/openSourceQuestions/Kafka_Consumer.md)
+
+### How does *npm* parse the *package.json* file?
+
+[Link to blogpost with my investigation](/openSourceQuestions/npm_PackageJSONparse.md)
+
+### How does the mongodb go driver handle authentication?
+
+*In progress...*
 
 ## Random what I learned
 
 - `Alt`(option in macOS) `+ Z` in vs code activates line wrap
 - `Show suggestions` in vs code in macOS has the keybinding `ctrl + space`, but macOS already has this mapped to change input keyboard. Changing this keybinding to `cmd + space` makes it work.
 - `Blockman` vs code extension works as a charm; better looking than `Colorized brackets`, but you need to fine tune the colors if you have a custom theme.
+- The `Remote Repository` extension was useful to me; allowed me to quickly search in a repo without cloning it.
