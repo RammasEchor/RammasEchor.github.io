@@ -10,7 +10,7 @@
 
 ---
 
-## *npm* contributions
+## *npm* contribution
 
 ### [BUG] NPM 7.x broke the "--json" CLI parameter #2740
 
@@ -121,4 +121,16 @@ Basically, it makes streamlined parsing of the output to a JSON object impossibl
 
 #### Proposal
 
-Output only one JSON object to `STDOUT`, with the `error` object embedded within.
+Output only one JSON object to `STDOUT`, with the `error` object embedded within. The error JSON object is also sent to `STDERR`.
+
+[Link to pull request](https://github.com/npm/cli/pull/3437)
+
+## The Go Language - Simplicity is complicated
+
+When I was researching about the Go language, I found about this little video that goes about why Go is the way it is.
+
+Some languages integrate features from another languages as time passes. This leads to all languages down a path where the end is that the only thing that makes them different is the name.
+
+Go is intended to be a simple language. If a language has too many features, you waste time choosing which ones to use. Preferable to have just one way, or at least fewer, simpler ways. Readability is paramount.
+
+If you need to recreate a thought process to read code, it does not have readability as it's principal purpose. The code is harder to understand just because it is using a more complicated language. Simplicity is the art of hiding complexity.
