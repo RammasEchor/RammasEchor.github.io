@@ -1,107 +1,235 @@
-# Week 10 - Open source / Read others people's code (1)
+# Week 11 - Open source / Read others people's code (2)
 
-## 08 Jun 2021 - 14 Jun 2021
+## 15 Jun 2021 - 21 Jun 2021
 
 ---
 
-Hi! This week in Academy we kicked off the phase *Open source / Read others people's code*. This week I answered two questions of three about open source projects by reading their code. I also learned about some general guidelines about contributing to open source projects. Here is what I learned this week:
+## *npm* contribution
 
-## How to contribute to open source
+### [BUG] NPM 7.x broke the "--json" CLI parameter #2740
 
-This is a quick lecture about general guidelines.
+[Link to issue](https://github.com/npm/cli/issues/2740)
 
-### Why contribute to open source?
+#### Context
 
-There are a variety of reasons why contributing to open source is a good idea;
+*npm* has an argument `--json` for certain options, which outputs information about the option used. For example:
 
-- Improve software you rely on
-- Improve your skills
-- Find mentors and teach others
-- All your open source is public, which means that you may show as a demonstration of what you can do.
+```console
+$ npm search --json
+npm ERR! search must be called with arguments
+{
+  "error": {
+    "code": null,
+    "summary": "search must be called with arguments",
+    "detail": ""
+  }
+}
 
-### What it means to contribute?
+npm ERR! A complete log of this run can be found in:
+```
 
-You don't have to contribute code; in fact, it is often the other parts of the project (documentation, translations) that are the most neglected.
+In *npm 6.x*, the JSON object is sent to `STDOUT`. If we send the `STDOUT` and `STDERR` streams to the files `out` and `error` respectively,
 
-But code is also fine.
+```console
+$ npm --version
+6.14.12
+$ npm search --json >out 2>error
+$
+```
 
-### Anatomy of a open source project
+in the `out` file we get:
 
-Every open source community is different, but many open source projects follow a similar organizational structure:
+```bash
+{
+  "error": {
+    "summary": "search must be called with arguments",
+    "detail": ""
+  }
+}
+```
 
-- Author: Creator of the project
-- Owner: Not always the same as the author, is the person with administrative ownership over the organization or repository
-- Maintainers: Contributors that drive the vision and managing the organizational aspects of the project
-- Contributors: Everyone who has contributed something back to the project
-- Community members: People who use the project
+and if we check the `error` file we get:
 
-A project also has documentation:
+```bash
+npm ERR! search must be called with arguments
 
-- License: *Open source license*
-- README: Instruction manual that welcome new community members
-- CONTRIBUTING: This helps people to find ways to contribute to the project
-- Code of conduct: Rules for participants
-- Other documentation
+npm ERR! A complete log of this run can be found in:
+...
+```
 
-And finally, open source projects may use tools to organize themselves:
+But if I do the same for *npm 7.x* (in the cloned repo),
 
-- Issue tracker
-- Pull requests
-- Forums or mailing lists
-- Chat channel
+```console
+$ node bin/npm-cli.js --version
+7.17.0
+$ npm search --json >out 2>error
+$
+```
 
-### Finding a project to contribute on
+ we get nothing in `out`, and this in `error`:
 
-There is a fairly long list of recommendations to check when searching for a open source project. Summary is listed below:
+ ```bash
+npm ERR! search must be called with arguments
+{
+  "error": {
+    "code": null,
+    "summary": "search must be called with arguments",
+    "detail": ""
+  }
+}
 
-- Meet the definition of open source
-- Actively accepts contributions
-- Is welcoming
+npm ERR! A complete log of this run can be found in:
+...
+```
 
-### How to submit a contribution
+So, now the problem is *not* to just set the output to `STDOUT`, but to check *why* is broken in the first place. It turns out this problem is a direct consequence to a fix for *another* bug. This leaves us in a tricky place. Do we fix the most recent bug, or do we leave it? Well, we can't just leave it as it is.
 
-#### Communicate effectively
+The fix was in response to an issue concerning two JSON objects in the output ([Link to that issue](https://github.com/npm/cli/issues/2150)):
 
-Before opening an issue of pull request, keep some points in mind to help come across your ideas effectively:
+```js
+{
+  "name": "temp",
+  "problems": [
+    "missing: foo@1.0.0, required by temp@"
+  ],
+  "dependencies": {
+    "foo": {
+      "required": "1.0.0",
+      "missing": true,
+      "problems": [
+        "missing: foo@1.0.0, required by temp@"
+      ]
+    }
+  }
+}
+{
+  "error": {
+    "code": "ELSPROBLEMS",
+    "summary": "missing: foo@1.0.0, required by temp@",
+    "detail": ""
+  }
+}
+```
 
-- Give context: Make sure the other person knows what you are talking about without making them search for it if it is not necessary.
-- Homework: Show that you tried to understand what you are asking.
-- Keep requests short and direct: Be concise, and don't waste peoples time.
-- Keep all communications public: Don't reach privately, what you are asking may help more people in the future.
-- It is okay to ask questions.
-- Respect community decisions.
-- **Keep it classy**
+Basically, it makes streamlined parsing of the output to a JSON object impossible because there are two top-level JSON objects (*streamlined* is the keyword here). The fix in response to this was to log that last `error` JSON to `STDERR`, instead of `STDOUT`.
 
-#### Gather context
+#### Proposal
 
-Check to make sure your idea hasn't been already discussed. Search for a few key terms. Before opening an issue or pull request, check the projects contributing docs to see how things are done.
+Output only one JSON object to `STDOUT`, with the `error` object embedded within. The error JSON object is also sent to `STDERR`.
 
-### After the submit
+[Link to pull request](https://github.com/npm/cli/pull/3437)
 
-You may not receive a response, tasked to rework the contribution, get rejected, and better, get accepted. This is normal, and don't get discouraged if it happens to you. Remember, whatever happens, keep it classy and respect the decision being made.
+In the open source codebase they have an `error-message` used for constructing messages for output. For the proposal, I did two things:
 
-## Open Source Questions
+- Before the error in `search` is thrown about no arguments passed, I output a JSON to `STDOUT` with information about the error, only for that error.
+- Before the error is thrown in `ls` about a dependency that cannot be found, I add to the JSON info an error with all the properties that are also sent to `STDERR`.
 
-This phase we were tasked to answer three questions about open source projects. One question was chosen from a set of questions, and the other two should be made by us. These questions "should elicit deep understanding of the project", and there should be a question per primary and secondary stack. Here are the questions I will be answering this phase:
+This was a little tricky because `npm` only allows output in a method called `npm.output()`, and in no other place.
 
-### How does a consumer gets a message in Apache Kafka?
+## The Go Language - Simplicity is complicated
 
-[Link to blogpost with my investigation](/openSourceQuestions/Kafka_Consumer.md)
+When I was researching about the Go language, I found about this little video that goes about why Go is the way it is.
 
-### How does *npm* parse the *package.json* file?
+Some languages integrate features from another languages as time passes. This leads to all languages down a path where the end is that the only thing that makes them different is the name.
 
-[Link to blogpost with my investigation](/openSourceQuestions/npm_PackageJSONparse.md)
+Go is intended to be a simple language. If a language has too many features, you waste time choosing which ones to use. Preferable to have just one way, or at least fewer, simpler ways. Readability is paramount.
 
-### How does the mongodb go driver handle authentication?
+If you need to recreate a thought process to read code, it does not have readability as it's principal purpose. The code is harder to understand just because it is using a more complicated language. Simplicity is the art of hiding complexity.
 
-*In progress...*
+## A tour of Go
 
-## Random what I learned
+I will try to put my takeaways here from this little tutorial, for later reference.
 
-- `Alt`(option in macOS) `+ Z` in vs code activates line wrap
-- `Show suggestions` in vs code in macOS has the keybinding `ctrl + space`, but macOS already has this mapped to change input keyboard. Changing this keybinding to `cmd + space` makes it work.
-- `Blockman` vs code extension works as a charm; better looking than `Colorized brackets`, but you need to fine tune the colors if you have a custom theme.
-- The `Remote Repository` extension was useful to me; allowed me to quickly search in a repo without cloning it.
+- Every go program is made of *packages*
+- Program starts running in package main
+- `import` imports packages
+- Only names that start with uppercase letters are imported
+- Functions:
+  - `func add(x int, y int) int`
+  - `func add(x, y int) int`
+  - `func add(x int, y int) (int, string)`
+  - Named return values: `func add(x int, y int) (x, y int)`
+    - All named return values are returned if `return` without args
+
+- Variables:
+  - `var x, y int`
+  - `var x, y int = 1, 2`
+  - Inferred values: `x := 1` creates an int
+  - Casts: `y := uint(24.5)`
+
+- Flow control:
+  - Only one construct for loops, `for`:
+    - `for i := 0; i < 10; i++ { sum += i }`
+    - Like while: `for i < 10 { i += i }`
+  - `if` construct:
+    - Can have initialization: `if v := math.Pow(x, n); v < lim { return v }`
+    - `if v := math.Pow(x, n); v < lim {  return v } else {  fmt.Printf("%g >= %g\n", v, lim) }`
+  - `switch`:
+    - Runs the first case that matches and nothing else.
+    - Has initialization
+    - `switch i := 2, i { case 2: do.somth() default: do.smthelse() }`
+    - Can be used for long `if else` chains:
+      - `switch { case i < 1 : do.s() case i > 1 : do.h() }`
+  - `defer`:
+    - Defers the execution of the function until the scope exits.
+    - Defer stacks the functions, *last-in-first-out*.
+
+- Pointers:
+  - Holds the memory address of a value.
+  - Pointer to int: `var p *int`
+  - THe `*` operator access the underlying value.
+
+- Structs:
+  - Collection of fields
+  - Access using a dot: `v.X`
+
+```go
+type Vertex struct {
+ X int
+ Y int
+}
+```
+
+- Pointers to structs
+  - `p := &v`
+  - `p.X`
+
+- Struct literals
+  - `Vertex{1, 2}`
+  - `Vertex{X:1}` where `Y:0` is implicit.
+
+- Arrays:
+  - Fixed size.
+  - `var a [10]int`
+
+- Slices:
+  - Dynamic.
+  - `var b []int`
+
+- Arrays and slices:
+  - A slice is a reference to a subset of elements of an array.
+  - `a[1:4]`, `a[:4]`, `a[:]` creates a slice.
+  - Changing the elements of a slice modifies the corresponding array.
+  - Other slices that reference that array will see those changes.
+  - This is an array: `[3]bool{true, true, false}`
+  - This creates an array and then builds a slice that references it: `[]bool{true, true, false}`
+  
+- `len(s)` and `cap(s)`
+  - Length of a slice is the number of elements it contains
+  - Number of elements in the underlying array, counting from the first element in the slice
+
+- Dynamically sized arrays (slices with make):
+  - `a := make([]int, 5)`
+  
+- Slices can have more slices in them
+- Append to a slice: `append(s, 0)`; `s` is the slice, `0` the elements.
+- `for range` iterates over a slice or map: `for i, v:= range slice {}`
+  - index and copy of value
+  - Skip the index: `_, v := range s`
+
+## Conclusions
+
+This week I learned a lot about big codebases; I learned that it helps immensely to be able to run the project instead of only reading the code. Unfortunately I choose as a first project to work on something that did not have good communication towards newcomers (I didn't learn this until later). This is not in a demeaning manner, I'm sure the maintainers have a lot on their plate right now, and everybody is busy, and can't respond to everything. But I'm happy that I followed the education team advice, and just went for the issue. Most probably my pull request won't be accepted, but hey, I tried and that is what matters.
 
 ## All blogs
 
@@ -119,5 +247,4 @@ This phase we were tasked to answer three questions about open source projects. 
 | [Week 9 - Building something from scratch (4)](/Week_Pages/Week9_Jun.md) | 01 Jun 2021 - 07 Jun 2021 |
 | [Month 2 - Building something from scratch](/Month_Pages/Month2_May.md) | 11 May 2021 - 07 Jun 2021 |
 | [Week 10 - Open source / Read others people's code (1)](/Week_Pages/Week10_Jun.md) | 08 Jun 2021 - 14 Jun 2021 |
-| [How does a consumer gets a message in Apache Kafka?](/openSourceQuestions/Kafka_Consumer.md) | First question of the phase *Open source / Read others people's code* |
-| [How does *npm* parse the *package.json* file?](/openSourceQuestions/npm_PackageJSONparse.md) | Second question of the phase *Open source / Read others people's code* |
+| [Week 11 - Open source / Read others people's code (2)](/Week_Pages/Week11_Jun.md) | 15 Jun 2021 - 21 Jun 2021 |
