@@ -1,235 +1,158 @@
-# Week 11 - Open source / Read others people's code (2)
+# Week 11 - Open source / Read others people's code (3)
 
-## 15 Jun 2021 - 21 Jun 2021
+## 22 Jun 2021 - 28 Jun 2021
 
 ---
 
-## *npm* contribution
+## *Mongo DB Go driver* contribution
 
-### [BUG] NPM 7.x broke the "--json" CLI parameter #2740
+### Remove unused typesafe BSON API
 
-[Link to issue](https://github.com/npm/cli/issues/2740)
+[Link to issue](https://jira.mongodb.org/browse/GODRIVER-1953)
 
-#### Context
+### Context
 
-*npm* has an argument `--json` for certain options, which outputs information about the option used. For example:
+There is a package (a collection of code) called `bsonx` that contains some proof of concept types used in version `1.0` of the driver. Since version `1.1`, those types were replaced by a package called `bsoncore` when a refactor occurred. These types should be removed as they are not longer being used or useful.
 
-```console
-$ npm search --json
-npm ERR! search must be called with arguments
-{
-  "error": {
-    "code": null,
-    "summary": "search must be called with arguments",
-    "detail": ""
-  }
-}
+I think that there is some backwards compatibility shenanigans going on, because some files use the package `bsonx`, but `bsonx` itself calls some methods from `bsoncore`.
 
-npm ERR! A complete log of this run can be found in:
-```
+### Status
 
-In *npm 6.x*, the JSON object is sent to `STDOUT`. If we send the `STDOUT` and `STDERR` streams to the files `out` and `error` respectively,
+Right now I created a draft pull request ([Link to draft](https://github.com/mongodb/mongo-go-driver/pull/692)) with some questions about the issue, but so far nobody has responded.
 
-```console
-$ npm --version
-6.14.12
-$ npm search --json >out 2>error
-$
-```
+My approach was to refactor the straggler cases of `bsonx` to `bson` or `bsoncore`; since the packages are fairly similar this seemed like a good approach.
 
-in the `out` file we get:
+I tried to reach the maintainers via the recommended channels in the `CONTRIBUTING.md` readme, but no one answered to my comments, so I created the draft pull request in my attempt to receive feedback.
 
-```bash
-{
-  "error": {
-    "summary": "search must be called with arguments",
-    "detail": ""
-  }
-}
-```
+## Topics for the interview
 
-and if we check the `error` file we get:
+This is what I learned investigating the topics. I put some *when to use what* about each struct, but, drawing from what I learned so far in the Academy, I think that *readability* and *maintainability* triumphs over any use case. Only when the speed is needed we should use a complex struct.
 
-```bash
-npm ERR! search must be called with arguments
+### Arrays
 
-npm ERR! A complete log of this run can be found in:
-...
-```
+Collection of items stored at a contiguous memory locations. Data is accessed via indexes. It cannot grow in size, or shrink.
 
-But if I do the same for *npm 7.x* (in the cloned repo),
+- Allow random access to elements
+- Have better cache locality, which is access to elements within relatively close storage locations. This means that this operation may be optimized via caching, prefetching, predicting.
 
-```console
-$ node bin/npm-cli.js --version
-7.17.0
-$ npm search --json >out 2>error
-$
-```
+Mathematically modeled, an array has two operations:
 
- we get nothing in `out`, and this in `error`:
+- `get(A, I)`: Get the *I* element from the array *A*
+- `set(A, I, V)`: Set the value *V* in the array *A* with index *I*
 
- ```bash
-npm ERR! search must be called with arguments
-{
-  "error": {
-    "code": null,
-    "summary": "search must be called with arguments",
-    "detail": ""
-  }
-}
+Those operations mean that each element behaves like a variable and that storing a value in one element does not affect the value of any other element.
 
-npm ERR! A complete log of this run can be found in:
-...
-```
+#### Dope vectors
 
-So, now the problem is *not* to just set the output to `STDOUT`, but to check *why* is broken in the first place. It turns out this problem is a direct consequence to a fix for *another* bug. This leaves us in a tricky place. Do we fix the most recent bug, or do we leave it? Well, we can't just leave it as it is.
+This is the array's *descriptor*: A record that contains the dimension *d* (number of indices needed to specify an element), the base address *B*, and the increments *c1, c2, c3...*. This dope vector is a complete handle for the array.
 
-The fix was in response to an issue concerning two JSON objects in the output ([Link to that issue](https://github.com/npm/cli/issues/2150)):
+A handle is an abstract reference to a resource, and it is used to manipulate that resource.
 
-```js
-{
-  "name": "temp",
-  "problems": [
-    "missing: foo@1.0.0, required by temp@"
-  ],
-  "dependencies": {
-    "foo": {
-      "required": "1.0.0",
-      "missing": true,
-      "problems": [
-        "missing: foo@1.0.0, required by temp@"
-      ]
-    }
-  }
-}
-{
-  "error": {
-    "code": "ELSPROBLEMS",
-    "summary": "missing: foo@1.0.0, required by temp@",
-    "detail": ""
-  }
-}
-```
+#### Why use an array?
 
-Basically, it makes streamlined parsing of the output to a JSON object impossible because there are two top-level JSON objects (*streamlined* is the keyword here). The fix in response to this was to log that last `error` JSON to `STDERR`, instead of `STDOUT`.
+An array has indexation complexity of `Θ(1)`. This means that the access to one element (given that you know the index) is independent of the array's size.
 
-#### Proposal
+A *dynamic* array may be resized, but the operation is costly. The only difference they have with normal arrays is that they expand, and when they expand, they essentially double their current size, to account for future resizes.
 
-Output only one JSON object to `STDOUT`, with the `error` object embedded within. The error JSON object is also sent to `STDERR`.
+In my understanding, you may choose to use an array over any other struct when:
 
-[Link to pull request](https://github.com/npm/cli/pull/3437)
+- Data will be accessed randomly
+- The size of the data may not change often
+- The data will be accessed sequentially: This is less dependent on the array than in the OS/microprocessor optimization for sequential memory accesses.
 
-In the open source codebase they have an `error-message` used for constructing messages for output. For the proposal, I did two things:
+### Linked lists
 
-- Before the error in `search` is thrown about no arguments passed, I output a JSON to `STDOUT` with information about the error, only for that error.
-- Before the error is thrown in `ls` about a dependency that cannot be found, I add to the JSON info an error with all the properties that are also sent to `STDERR`.
+Is a linear collection of data elements whose order is not given by their physical placement in memory (unlike an array). Instead, each element points to the next. It can be resized.
 
-This was a little tricky because `npm` only allows output in a method called `npm.output()`, and in no other place.
+- Does not need a contiguous block of memory
+- Insertion and removal of elements from any position is possible
+- Accessing an element requires iterating from the first element to the desired one through all the elements between them. This means any form of indexing is no efficient
 
-## The Go Language - Simplicity is complicated
+The *handler* to the simplest list points to the initial element. The end of the list may be obtained when the current element `next` pointer is `null`. Handles now have more overhead, for example, `size` and `type`.
 
-When I was researching about the Go language, I found about this little video that goes about why Go is the way it is.
+#### When to use linked lists?
 
-Some languages integrate features from another languages as time passes. This leads to all languages down a path where the end is that the only thing that makes them different is the name.
+- Data is not usually accessed randomly
+- Frequent insertion and deletion of elements
+- Memory is not capable of big sequential chunks
+- Sequential access to data (although arrays are much better for this)
 
-Go is intended to be a simple language. If a language has too many features, you waste time choosing which ones to use. Preferable to have just one way, or at least fewer, simpler ways. Readability is paramount.
+### Sets
 
-If you need to recreate a thought process to read code, it does not have readability as it's principal purpose. The code is harder to understand just because it is using a more complicated language. Simplicity is the art of hiding complexity.
+Abstract data type that can store unique values, without any particular order. Rather than retrieving a specific element from a set, one typically tests a value for membership in a set.
 
-## A tour of Go
+#### When to use sets
 
-I will try to put my takeaways here from this little tutorial, for later reference.
+- When you need to test if a element or value belongs to something
 
-- Every go program is made of *packages*
-- Program starts running in package main
-- `import` imports packages
-- Only names that start with uppercase letters are imported
-- Functions:
-  - `func add(x int, y int) int`
-  - `func add(x, y int) int`
-  - `func add(x int, y int) (int, string)`
-  - Named return values: `func add(x int, y int) (x, y int)`
-    - All named return values are returned if `return` without args
+Sets are representations of *finite sets*.
 
-- Variables:
-  - `var x, y int`
-  - `var x, y int = 1, 2`
-  - Inferred values: `x := 1` creates an int
-  - Casts: `y := uint(24.5)`
+### Heaps
 
-- Flow control:
-  - Only one construct for loops, `for`:
-    - `for i := 0; i < 10; i++ { sum += i }`
-    - Like while: `for i < 10 { i += i }`
-  - `if` construct:
-    - Can have initialization: `if v := math.Pow(x, n); v < lim { return v }`
-    - `if v := math.Pow(x, n); v < lim {  return v } else {  fmt.Printf("%g >= %g\n", v, lim) }`
-  - `switch`:
-    - Runs the first case that matches and nothing else.
-    - Has initialization
-    - `switch i := 2, i { case 2: do.somth() default: do.smthelse() }`
-    - Can be used for long `if else` chains:
-      - `switch { case i < 1 : do.s() case i > 1 : do.h() }`
-  - `defer`:
-    - Defers the execution of the function until the scope exits.
-    - Defer stacks the functions, *last-in-first-out*.
+Is a tree-like structure that satisfies the *heap property*: The parent of a node has always a value greater/equal to it's children. This means that there is no ordering between siblings or cousins; only the between the nodes and it's parents, grandparents, etc.
 
-- Pointers:
-  - Holds the memory address of a value.
-  - Pointer to int: `var p *int`
-  - THe `*` operator access the underlying value.
+#### When to use a heap
 
-- Structs:
-  - Collection of fields
-  - Access using a dot: `v.X`
+- When creating a priority queue. This ensures that a task needed for other tasks is done first, no matter the order of those other tasks.
 
-```go
-type Vertex struct {
- X int
- Y int
-}
-```
+Keep in mind that the ordering only applies to parents and children.
 
-- Pointers to structs
-  - `p := &v`
-  - `p.X`
+### Hash table
 
-- Struct literals
-  - `Vertex{1, 2}`
-  - `Vertex{X:1}` where `Y:0` is implicit.
+Data structure that can map keys to values via a *hash function*. A hash function is a function that can map arbitrary sized inputs to a fixed sized output.
 
-- Arrays:
-  - Fixed size.
-  - `var a [10]int`
+This an implementation of an associative array: A data type composed of a collection of pairs (key, value). It takes the key as an input to a hash function. The output tells the hash table in which *bucket*, or slot it may set, or get, the corresponding value *and its key*.
 
-- Slices:
-  - Dynamic.
-  - `var b []int`
+This mapping may result in collisions, where the hashing function outputs the same value for two different keys, but there there are many solutions to this. The most simple is to advance one slot until it finds one that is empty.
 
-- Arrays and slices:
-  - A slice is a reference to a subset of elements of an array.
-  - `a[1:4]`, `a[:4]`, `a[:]` creates a slice.
-  - Changing the elements of a slice modifies the corresponding array.
-  - Other slices that reference that array will see those changes.
-  - This is an array: `[3]bool{true, true, false}`
-  - This creates an array and then builds a slice that references it: `[]bool{true, true, false}`
-  
-- `len(s)` and `cap(s)`
-  - Length of a slice is the number of elements it contains
-  - Number of elements in the underlying array, counting from the first element in the slice
+Hashed tables allow for fast indexation of items (like arrays), while keeping the ability of resizing (*rehashing*) like linked lists. Note that this rehashing is not always efficient or fast.
 
-- Dynamically sized arrays (slices with make):
-  - `a := make([]int, 5)`
-  
-- Slices can have more slices in them
-- Append to a slice: `append(s, 0)`; `s` is the slice, `0` the elements.
-- `for range` iterates over a slice or map: `for i, v:= range slice {}`
-  - index and copy of value
-  - Skip the index: `_, v := range s`
+#### When to use hash tables
+
+- Storing key-value pairs
+- When access speed is important, and data size changes are minimal
+- Lookup tables (tend to be more efficient than trees)
+
+### Trees
+
+Simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node, represented as a set of linked nodes.
+
+A tree has:
+
+- *Nodes*: each element in the tree
+- *Child nodes*: Nodes may have children
+- *Parent node*:  Nodes always have a parent (except the *root node*). Child nodes with the same parent are *sibling* nodes
+- *Root*: The topmost node
+
+A tree may implement some sort of ordering for the nodes, or may not. For example, a *heap* orders the nodes in terms of parents and children, but not in terms of siblings or cousins. A *binary search tree* (binary means that nodes have at most two children) orders its elements in such a way that the right child node is always greater/lesser than the left child. Then, each insertion follows the path to its ordered place.
+
+There are many ways to search in a tree; two of the most common are:
+
+- *Breadth-first search*: Searches all nodes in the same level first.
+- *Depth-first search*: Explores as far as possible each branch before backtracking.
+
+#### When to use trees
+
+- Good indexing, insertions and deletion times: `Θ(log n)`
+- Good all rounder
+
+If the abstraction is good, readability is not a problem.
+
+### Some thoughts on algorithm complexity
+
+1. How often will the program be used? If only once, or a few times
+    do we care about run time? Will it take longer to code than to run
+    for the few times it is used?
+2. Will it only be used on small inputs, or large inputs.
+3. An efficient algorithm might require careful coding, be difficult
+    to implement, difficult to understand, and difficult to maintain.
+    Can we afford those expenses?
 
 ## Conclusions
 
-This week I learned a lot about big codebases; I learned that it helps immensely to be able to run the project instead of only reading the code. Unfortunately I choose as a first project to work on something that did not have good communication towards newcomers (I didn't learn this until later). This is not in a demeaning manner, I'm sure the maintainers have a lot on their plate right now, and everybody is busy, and can't respond to everything. But I'm happy that I followed the education team advice, and just went for the issue. Most probably my pull request won't be accepted, but hey, I tried and that is what matters.
+Working in the Golang issue showed me that not all code is good; I don't mean this in the performance context, but in the *readability* context. I was drawn to Go since it's selling point was a focus on readability and simplicity, but in the issue I worked the variable names often didn't mean anything, and method names worse. But this is totally subjective to me; maybe with more experience under my belt I would be able to make sense of it faster. One of the principal types is `bsoncore.D`. I do think they had a reason to call it that, but to me it was not clear until I read the documentation and the code.
+
+Reviewing the data structures topic, I relearned a lot of things that I had forgotten about. I don't know why, but I enjoy learning about data structures and software design patterns. Like if I read about it, it magically makes me a better developer, ha. Moreover, I read about clean code, and that is what prompt me to ramble about code.
 
 ## All blogs
 
@@ -248,3 +171,4 @@ This week I learned a lot about big codebases; I learned that it helps immensely
 | [Month 2 - Building something from scratch](/Month_Pages/Month2_May.md) | 11 May 2021 - 07 Jun 2021 |
 | [Week 10 - Open source / Read others people's code (1)](/Week_Pages/Week10_Jun.md) | 08 Jun 2021 - 14 Jun 2021 |
 | [Week 11 - Open source / Read others people's code (2)](/Week_Pages/Week11_Jun.md) | 15 Jun 2021 - 21 Jun 2021 |
+| [Week 12 - Open source / Read others people's code (3)](/Week_Pages/Week12_Jun.md) | 22 Jun 2021 - 28 Jun 2021 |
