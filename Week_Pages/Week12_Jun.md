@@ -72,7 +72,7 @@ Is a linear collection of data elements whose order is not given by their physic
 
 - Does not need a contiguous block of memory
 - Insertion and removal of elements from any position is possible
-- Accessing an element requires iterating from the first element to the desired one through all the elements between them. This means any form of indexing is no efficient
+- Accessing an element requires iterating from the first element to the desired one through all the elements between them. This means any form of indexing is not efficient
 
 The *handler* to the simplest list points to the initial element. The end of the list may be obtained when the current element `next` pointer is `null`. Handles now have more overhead, for example, `size` and `type`.
 

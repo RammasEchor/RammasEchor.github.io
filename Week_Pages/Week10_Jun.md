@@ -92,15 +92,11 @@ This phase we were tasked to answer three questions about open source projects. 
 
 ### How does a consumer gets a message in Apache Kafka?
 
-[Link to blogpost with my investigation](/openSourceQuestions/Kafka_Consumer.md)
-
 ### How does *npm* parse the *package.json* file?
-
-[Link to blogpost with my investigation](/openSourceQuestions/npm_PackageJSONparse.md)
 
 ### How does the mongodb go driver handle authentication?
 
-*In progress...*
+Unfortunately, I'm not able to share right now my answers since they may be used in another blogpost, and I don't want to trigger the google's indexation alarm.
 
 ## Random what I learned
 
