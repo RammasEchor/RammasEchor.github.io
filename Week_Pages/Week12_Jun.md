@@ -1,4 +1,4 @@
-# Week 11 - Open source / Read others people's code (3)
+# Week 12 - Open source / Read others people's code (3)
 
 ## 22 Jun 2021 - 28 Jun 2021
 
