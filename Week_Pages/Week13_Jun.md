@@ -42,13 +42,13 @@ I have been trying to reproduce the original error mentioned in the issue, but i
 Hoping that those two error assertions were related to the error, I started to dive into the code. The expected behavior of the above code is to set any item that is added to the `0` index (so, behind all other items), however, the view in the navigator is not updated, since the world belonging to the navigator does not have the items updated at the moment of `setItemIndex`.
 
 The code above has this behavior:
-![wrong_behavior](imgs/open_source/wrong.png)
+![wrong_behavior](../imgs/open_source/wrong.png)
 
 I can't get to output the original error message, but the behavior seems closely related to the discrepancy between the `world` of the `navigator` and the main view.
 
 I have been able to fix this discrepancy, but I need to find a way to reproduce the original error to see if it is really fixed. This is the expected behavior:
 
-![right](imgs/open_source/right.png)
+![right](../imgs/open_source/right.png)
 
 I asked some questions in the original issue with my findings, and right now I'm waiting a little bit to see if there is any response.
 
@@ -178,23 +178,3 @@ Tests should be:
 ## Conclusions
 
 This week I learned a lot about SOLID principles and Unit testing. I revisited some old weekly blogs about unit testing, and everything seems so clear now. Practicing with big codebases gave me a lot more experience I was expecting, and I did learn a lot from them. This week I worked on a javascript issue, and the maintainer actually answered! The last two open-source projects I worked on I did not get a response until I created a Draft Pull Request (and in one I'm still expecting the response to that Pull Request), but having someone that could answer some questions for me was really helpful. About some principles when writing code, I'm not 100% sold on the short function one, because I almost never see a short function in the codebases I have been working on. Oh well, I hope that when I'm working in a team I can ask about it.
-
-## All blogs
-
-| Blog | Info |
-| --- | --- |
-| [Week 1 - Innovation and hard\smart work](/Week_Pages/Week1_April.md) | 05 Apr 2021 - 12 Apr 2021 |
-| [Week 2 - Polyglot Programming](/Week_Pages/Week2_April.md) | 13 Apr 2021 - 19 Apr 2021 |
-| [Week 3 - Fancy Topics](/Week_Pages/Week3_April.md) | 20 Apr 2021 - 26 Apr 2021 |
-| [Week 4 - It's all about science](/Week_Pages/Week4_April.md) | 27 Apr 2021 - 03 May 2021 |
-| [Pretotypes](/Pretotypes/Pretotypes_April2021.md) | My pretotypes for week 4 (*It's all about science*) |
-| [Month 1 - Reset Phase](/Month_Pages/Month1_April.md) | 05 Apr 2021 - 03 May 2021 |
-| [Week 6 - Building something from scratch (1)](/Week_Pages/Week6_May.md) | 11 May 2021 - 17 May 2021 |
-| [Week 7 - Building something from scratch (2)](/Week_Pages/Week7_May.md) | 18 May 2021 - 24 May 2021 |
-| [Week 8 - Building something from scratch (3)](/Week_Pages/Week8_May.md) | 25 May 2021 - 31 May 2021 |
-| [Week 9 - Building something from scratch (4)](/Week_Pages/Week9_Jun.md) | 01 Jun 2021 - 07 Jun 2021 |
-| [Month 2 - Building something from scratch](/Month_Pages/Month2_May.md) | 11 May 2021 - 07 Jun 2021 |
-| [Week 10 - Open source / Read others people's code (1)](/Week_Pages/Week10_Jun.md) | 08 Jun 2021 - 14 Jun 2021 |
-| [Week 11 - Open source / Read others people's code (2)](/Week_Pages/Week11_Jun.md) | 15 Jun 2021 - 21 Jun 2021 |
-| [Week 12 - Open source / Read others people's code (3)](/Week_Pages/Week12_Jun.md) | 22 Jun 2021 - 28 Jun 2021 |
-| [Week 13 - Open source / Read others people's code (4)](/Week_Pages/Week13_Jun.md) | 29 Jun 2021 - 05 Jul 2021 |
