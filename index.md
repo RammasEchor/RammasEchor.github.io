@@ -1,6 +1,6 @@
-# Week 13 - Open source / Read others people's code (4)
+# Month 3 - Open source / Read others people's code
 
-## 29 Jun 2021 - 05 Jul 2021
+## 08 Jun 2021 - 12 Jul 2021
 
 ---
 
