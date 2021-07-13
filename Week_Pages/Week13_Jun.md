@@ -77,7 +77,7 @@ This principle was "refactored" to *The Polymorphic Open/Closed Principle*; it u
 
 And what is this purpose? The quote above means that a software entity has a *contract* with those who interact with it. This contract *should* be *closed* for modification, but the internal implementation *should* be *open* for extending it.
 
-This is where interfaces enter. You define a behavior with the interface, a set of methods that objects that implement that interface *will* have. But each object may implement it's own version of those methods. The interface *should* not change, but you may define new objects that implement that interface with new behavior.
+This is where interfaces enter. You define behavior within the interface, a set of methods that objects that implement that interface *will* have. But each object may implement it's own version of those methods. The interface *should* not change, but you may define new objects that implement that interface with new behavior.
 
 #### Substitution principle
 
