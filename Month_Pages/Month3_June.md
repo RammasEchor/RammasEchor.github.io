@@ -62,7 +62,7 @@ My approach to the issue was deemed acceptable by the maintainers, and my work w
 
 ##### Pull Request Created
 
-[Context](/Week_Pages/Week14_Jun.md)
+[Context](/Week_Pages/Week14_Jul.md)
 
 This feature has already code that does what is needed; it works if I just copy and and paste the code inside a switch, but this is a bad code practice: better to avoid code duplication. I read about closures and the object this in javascript to help me understand a way to solve it; also, about the bind() function. The maintainers asked me to fix something related to the issue in my pull request, so that's what I have been doing
 
@@ -76,7 +76,7 @@ This feature has already code that does what is needed; it works if I just copy 
 
 ##### Pull Request Created
 
-[Context](/Week_Pages/Week14_Jun.md)
+[Context](/Week_Pages/Week14_Jul.md)
 
 You may notice that the issue and the pull request are in different open source projects. This is because the root cause was not in the original project, but in a library that uses the original project. This fix seemed simple enough, but I did have to dive fairly deep into the code to realize that it was an issue of the other project
 

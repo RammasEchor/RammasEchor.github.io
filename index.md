@@ -4,12 +4,6 @@
 
 ---
 
-### Main page
-
-[https://rammasechor.github.io/](https://rammasechor.github.io/)
-
----
-
 ## Status of my open source contributions as today 12-Jul-2020
 
 ### 1. npm contribution
@@ -107,5 +101,5 @@ This phase I learned a lot about big codebases, how to navigate them, how to rea
 | [Week 11 - Open source / Read others people's code (2)](/Week_Pages/Week11_Jun.md) | 15 Jun 2021 - 21 Jun 2021 |
 | [Week 12 - Open source / Read others people's code (3)](/Week_Pages/Week12_Jun.md) | 22 Jun 2021 - 28 Jun 2021 |
 | [Week 13 - Open source / Read others people's code (4)](/Week_Pages/Week13_Jun.md) | 29 Jun 2021 - 05 Jul 2021 |
-| [Week 14 - Open source / Read others people's code (5)](/Week_Pages/Week14_Jun.md) | 06 Jul 2021 - 12 Jul 2021 |
+| [Week 14 - Open source / Read others people's code (5)](/Week_Pages/Week14_Jul.md) | 06 Jul 2021 - 12 Jul 2021 |
 | [Month 3 - Open source / Read others people's code](/Month_Pages/Month3_June.md) | 08 Jun 2021 - 12 Jul 2021 |
