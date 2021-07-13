@@ -10,18 +10,6 @@
 
 ---
 
-# Month 3 - Open source / Read others people's code
-
-## 08 Jun 2021 - 12 Jul 2021
-
----
-
-### Main page
-
-[https://rammasechor.github.io/](https://rammasechor.github.io/)
-
----
-
 ## Status of my open source contributions as today 12-Jul-2020
 
 ### 1. npm contribution
