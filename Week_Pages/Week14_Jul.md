@@ -208,3 +208,31 @@ Design patterns that deal with object creation mechanisms.
 - Singleton: Ensures a class has only one instance. You can't instantiate new objects; only a static method returns the only object created of that type.
 
 #### Structural Pattern
+
+How to assemble objects and classes into larger structures while keeping flexibility.
+
+- Adapter: Converts the interface of one object, so that another object can understand it. It receives a call form the first object; and then it transforms that call into something that the second object can understand.
+- Bridge:
+
+    Lets you split a large class/set of classes in two separate hierarchies. This occurs when you want to extend a class in more than one independent dimension, and end up with an exponential growth of new classes. They key point is switching from inheritance to object composition. This means that the *abstraction* (the object you interact with) has an object of type *implementation*, which in turn it may be an interface. The *abstraction* receives calls, and in turn, calls methods on the *implementation*.
+
+- Composite: This pattern is based on the assumption of a hierarchy. Each element in a hierarchy implements a interface, so it does not matter which type of element you have under, you will be able to communicate with it.
+- Decorator: It is similar to the *builder* pattern. You wrap a base class in *decorators*: each decorator has a reference to the interface, and behavior that is added to each method call. The reference allows multiple wraps around the object.
+- Facade: Simplified interface to a library, a framework, or any other complex set of classes. It includes only those features that we care about. It may reference more facades to avoid polluting a single facade with unrelated features that might regress it to a complex struct.
+- Flyweight: Share common parts of state between multiple objects to avoid gobbling up the RAM.
+- Proxy: Placeholder for another object. Control access to the original object, and handles behavior like lazy initialization and deferred execution. This is useful when you have an object that uses a lot of resources, and you don't want to use it frequently.
+
+#### Behavioral patterns
+
+- Chain of responsibility: Helps with sequential tasks that may be integrated in a class o a large function. The key is to transform particular behavior into stand-alone objects called *handlers*. Each handler implements the same interface, and has a reference to another handler. This allows for creating chains of handlers. A handler may decide not to pass the request further down the chain, and stop any more processing, because it can handle the request, or any other reason.
+- Command: Turns a request into a stand-alone object that contains all information about the request. This means all the details like the object being called, the name of the method, and a list of arguments are in a separate class called *Command*. This class implements an interface for the commands. The *invoker* (object that uses the *Command* class) has a field for storing the command object. The sender is not responsible for creating this command. The command object may just have a method; `execute()`.
+- Iterator: Traverse elements of a collection without exposing its underlying representation. Instead of having the data struct have methods for traversing itself, this methods are extracted and sent to a class called `iterator`. Each data struct has a method for creating new iterators.
+- Mediator: Communication between components should pass through a special mediator object.
+- Memento: Similar to the *prototype* pattern, each object is responsible of creating a snapshot of itself. This may be used for various things, like rollback, but the important thing is that it does not break encapsulation.
+- Observer: The observer pattern suggests that you add a subscription mechanism to a publisher class, so individual objects may be notified from a stream of events coming from the publisher.
+- State: Lets an object alter its behavior when its internal state changes. Related to a Finite-State Machine. This pattern suggests that you create new classes for all states and extract each specific behavior into this classes. Each state class should have the same interface.
+- Strategy: Extract all the different ways a class may do something and put them into classes. The original class has a field for a reference of a strategy, and delegates the work to that class. The client passes the desired strategy into the original class.
+- Template method: Defines the skeleton of an algorithm in the superclass, but let subclasses override specific steps. This superclass is an abstract class, and has a layout of the algorithm. The concrete classes may not modify this layout, but can override the methods used in the layout.
+- Visitor: Separate algorithms from the objects on which they operate. You create a visitor, and each object receive this visitor and tells the visitor which methods to execute.
+
+### Databases
