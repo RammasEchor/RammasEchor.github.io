@@ -234,5 +234,3 @@ How to assemble objects and classes into larger structures while keeping flexibi
 - Strategy: Extract all the different ways a class may do something and put them into classes. The original class has a field for a reference of a strategy, and delegates the work to that class. The client passes the desired strategy into the original class.
 - Template method: Defines the skeleton of an algorithm in the superclass, but let subclasses override specific steps. This superclass is an abstract class, and has a layout of the algorithm. The concrete classes may not modify this layout, but can override the methods used in the layout.
 - Visitor: Separate algorithms from the objects on which they operate. You create a visitor, and each object receive this visitor and tells the visitor which methods to execute.
-
-### Databases

@@ -36,7 +36,7 @@ This is what I learned investigating the topics. I put some *when to use what* a
 
 ### Arrays
 
-Collection of items stored at a contiguous memory locations. Data is accessed via indexes. It cannot grow in size, or shrink.
+Collection of items stored that may be stored at contiguous memory locations. Data is accessed via indexes. It cannot grow in size, or shrink.
 
 - Allow random access to elements
 - Have better cache locality, which is access to elements within relatively close storage locations. This means that this operation may be optimized via caching, prefetching, predicting.
