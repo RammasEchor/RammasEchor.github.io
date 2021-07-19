@@ -70,9 +70,9 @@ To use the board effectively, you need to understand what it takes to get an ite
 
 One of the key features is the *Work in progress limit*. This means that only a number of active items may be in progress at any given time. Switching a team's focus halfway will harm the process, and multitasking generates waste and inefficiency.
 
-## Cracking the code interview
-
 ## Hackerrank interview preparation
+
+I have been solving some exercises, and It really had helped me to fill in some little gaps in respect of my knowledge of both my primary stack (javascript).
 
 ## Duck Typing
 
@@ -85,3 +85,24 @@ void func(e)    {
 ```
 
 Javascript has no way of knowing if `e` even has that method, so it just **tries it out with what is given**. The operation does not **formally specify** the requirements that its operands have to meet.
+
+## How to: Work at Google - Example coding/Engineering Interview
+
+Behavior:
+
+- Repeat the problem to the interviewer to make sure you understood it right. Inputs, outputs, anything: there is no dumb questions.
+- Really, repeat the questions, and ask even the most simple things. Maybe you assumed that you may not repeat numbers, and maybe it is possible and you just shoot yourself in the foot.
+- State the brute force solution first.
+- Practice coding in paper to ease yourself into writing code in the whiteboard.
+- Talk about your thought process. Talk, and explain your ideas, explain what you are doing, everything.
+- Outline the solution out loud before start coding.
+- Test the code in real time.
+- Think about edge cases.
+
+## Google Coding Interview With A Competitive Programmer
+
+This is an example of how not to loose your cool while presented with problems that you cannot solve. Try to do your best! Remember that for very hard problems, the interviewer is evaluating how you behave in the face of challenges, not looking for a perfect solution.
+
+## Conclusions
+
+This week I reviewed a lot of topics I had forgotten, and learned some new things! The first time I was those topics I hadn't have the experience I have now to understand them, so I saw them in a new light. Reading about SCRUM and KANBAN helped understand better the motivations behind adopting each workflow, and how self-organization is essential for doing a good job. Interviewers grade your communication and problem solving skills as much, or more, than knowledge.
