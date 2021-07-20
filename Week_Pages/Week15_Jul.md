@@ -72,11 +72,11 @@ One of the key features is the *Work in progress limit*. This means that only a 
 
 ## Hackerrank interview preparation
 
-I have been solving some exercises, and It really had helped me to fill in some little gaps in respect of my knowledge of both my primary stack (javascript).
+I have been solving some exercises, and It really had helped me to fill in some little gaps in respect of my knowledge about my primary stack (javascript).
 
 ## Duck Typing
 
-This means that, when you pass an object to a function, you may call a method on this object:
+For example, when you pass an object to a function, you may call a method on this object:
 
 ```js
 void func(e)    {
@@ -87,8 +87,6 @@ void func(e)    {
 Javascript has no way of knowing if `e` even has that method, so it just **tries it out with what is given**. The operation does not **formally specify** the requirements that its operands have to meet.
 
 ## How to: Work at Google - Example coding/Engineering Interview
-
-Behavior:
 
 - Repeat the problem to the interviewer to make sure you understood it right. Inputs, outputs, anything: there is no dumb questions.
 - Really, repeat the questions, and ask even the most simple things. Maybe you assumed that you may not repeat numbers, and maybe it is possible and you just shoot yourself in the foot.
