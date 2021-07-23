@@ -61,6 +61,7 @@ SOLID is an acronym for five design principles intended to make software designs
 #### Single responsibility principle
 
 Every module, class, or function in a computer program should have responsibility over a single part of the program's functionality, and it should encapsulate that part. This is also expressed as
+
 >A class should have only one reason to change
 
 It makes your software easier to implement, and prevents unexpected side effects of future changes.

@@ -265,7 +265,7 @@ Making them think is to make them work a little to work up with you, but not to 
 
 To make them feel, you want them to participate. Show them that every participation is valid. Choose someone to ask, don't just leave the question hanging. Relate to the present, to the room. Emit the emotions that you want to generate in the audience.
 
-## What got you here Won't get you there
+## What got you here won't get you there
 
 The more successful we are, the more delusional. There are some bad habits that successful people make:
 

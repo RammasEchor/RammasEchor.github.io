@@ -83,7 +83,7 @@ To achieve this, it uses a *pivot*. This pivot is a value that is position is fi
 
 The way we choose our pivot can affect performance, but there is no way to know until tested.
 
-We take our pivot, and swap values on the left of our pivot if they are larger than the pivot *with* values on the right that are smaller than the pivot.
+We take our pivot, and swap values on the left of our pivot if they are larger than the pivot *with* values on the right that are smaller than the pivot. Then, we put our pivot where this two new subarrays meet.
 
 It has an average case of `O( n log n )`, and a worst case scenario of `O(nˆ2)` Worst case occurs when one of the subarrays returned is of size `n - 1`. This may occur when the pivot is the smallest or largest element in the list, because we need to traverse the entire list to compare, and if this is repeated, we reach `nˆ2`.
 
@@ -92,6 +92,8 @@ Quicksort has the advantage of `O(log n)` space complexity.
 #### Mergesort
 
 Is *not* an in place sorting algorithm. Divides recursively the array into smaller pieces; then, after we reach individual elements in the recursion, we re-integrate them in a sorted manner.
+
+Divide the list into the smallest unit, and then compare each element with the adjacent list to sort and merge the two adjacent lists.
 
 It has a `O(n log n)` average and worst case scenario, and a space complexity of `O(n)`.
 
@@ -140,6 +142,8 @@ Applies to trees. Starts at the root, and explores as far as possible along each
 Also used to traverse trees.
 
 ### Object Oriented Programming
+
+Programming paradigm based on the concept of objects, which can contain data and code.
 
 #### Inheritance
 

@@ -39,7 +39,7 @@ Some key points about the Agile manifesto:
 
 SCRUM is not a *methodology*. It replaces a programmed algorithmic approach with a heuristic one. A keyword of SCRUM is *adapt*.
 
-It starts with a product owner that represents stakeholders and customers. This product owner manages the backlog; a prioritized list with all the work needed for the product.
+It starts with a *product owner* that represents stakeholders and customers. This product owner manages the backlog; a prioritized list with all the work needed for the product.
 
 Work is done by a self-organizing team during a sprint (a period of one to four weeks). During sprint planning, a sprint backlog based on the sprint goal is created. With the definition of done in place, the team work together to deliver value.
 

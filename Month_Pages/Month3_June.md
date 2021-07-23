@@ -12,7 +12,7 @@
 
 ## Status of my open source contributions as today 12-Jul-2020
 
-### 1. npm contribution
+### 1. NPM 7.x broke the “–json” CLI parameter (npm)
 
 #### Status
 
@@ -26,7 +26,7 @@ The issue was marked as open and with some thumbs up from the maintainers, but t
 
 [Link to pull request](https://github.com/npm/cli/pull/3437)
 
-### 2. mongodb Go driver contribution
+### 2. Remove unused typesafe BSON API (mongodb Go driver)
 
 #### Status
 
@@ -40,7 +40,7 @@ I tried to ask some questions about my approach to the issue, but no one respond
 
 [Link to draft pull request](https://github.com/mongodb/mongo-go-driver/pull/692)
 
-### 3. openseadragon contribution
+### 3. Inconsistency with setItemIndex and Navigator (openseadragon)
 
 #### Status
 
@@ -56,11 +56,11 @@ My approach to the issue was deemed acceptable by the maintainers, and my work w
 
 [Link to pull request](https://github.com/openseadragon/openseadragon/pull/2005)
 
-### 4. openseadragon contribution
+### 4. Add navigation keys to change image sources (openseadragon)
 
 #### Status
 
-##### Pull Request Created
+##### Pull Request Created (23-Jul-2021 Edit: Merged)
 
 [Context](https://rammasechor.github.io/Week_Pages/Week14_Jul.html)
 
@@ -70,11 +70,11 @@ This feature has already code that does what is needed; it works if I just copy 
 
 [Link to pull request](https://github.com/openseadragon/openseadragon/pull/2007)
 
-### 5. openseadragon contribution
+### 5. Navigator mini-map resizes images when not intended (openseadragon)
 
 #### Status
 
-##### Pull Request Created
+##### Pull Request Created (23-Jul-2021 Edit: Original issue closed)
 
 [Context](https://rammasechor.github.io/Week_Pages/Week14_Jul.html)
 

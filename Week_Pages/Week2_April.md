@@ -41,8 +41,7 @@ it can run any program that uses those calls to the system.
   - Decorator: Adds functionality to a class dynamically
   - Facade: Unified and simpler interface that hides complexity of subsystems
   - Flyweight: Used for efficiency and memory conservation (example: you just instantiate one type of object. If asked for another, you return the existing one)
-  - Proxy: Placeholder for access to an object, usually used when the object should not have a responsibility, but we want to add anyways. The proxy calls this
-  - functionality if we need it. If not, just calls the object.
+  - Proxy: Placeholder for access to an object, usually used when the object should not have a responsibility, but we want to add anyways. The proxy calls this functionality if we need it. If not, just calls the object.
 
 ## The myth of the genius programmer
 
