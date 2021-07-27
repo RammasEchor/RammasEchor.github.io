@@ -12,7 +12,7 @@
 
 ## Performance interview
 
-This week I had my performance interview. Since about 4 weeks ago I started reviewing the topics for this interview, and this week I did not learn a lot of new things. I do not have received feedback from the interview yet, but I think my performance was average. I am really not happy with this, since I sinked a lot of time studying, but I realized that I need to better myself so I can be at the level I want to be. During the interview I was nervous, and did wander when coming up with answers.
+This week I had my performance interview. Since about 4 weeks ago I started reviewing the topics for this interview, and this week I did not learn a lot of new things. I do not have received feedback from the interview yet, but I think my performance was average. I am really not happy with this, since I sinked a lot of time studying, but I realized that I need to better myself so I can be at the level I want to be. During the interview I was nervous, and did wander off when coming up with answers.
 
 I need to be more confident in my answers, and for me to be more confident I need to know the topic very, very well. To reach this I need to comprehend not only the general strokes, but memorize the concepts for each part. I know how, and why, but hearing a name I haven't heard trips me out, and I know that if I knew the concept it would be much more easier.
 
