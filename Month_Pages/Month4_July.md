@@ -168,4 +168,3 @@ Big O just describes the rate of increase for a given input.
 - Queue: FIFO
 
 ### Trees and graphs
-
